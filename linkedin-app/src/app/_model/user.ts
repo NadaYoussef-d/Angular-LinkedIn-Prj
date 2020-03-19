@@ -9,5 +9,5 @@ export interface User {
   about?: string;
   expriences?: string[];
   skills?: string[];
-  connectios?: number[];
+  connectionIds?: number[];
 }
