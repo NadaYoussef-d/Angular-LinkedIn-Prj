@@ -10,6 +10,10 @@ import { HomeComponent } from "./features/home/home.component";
 import { ProfileComponent } from "./features/profile/profile.component";
 import { PostAddComponent } from './features/post/post-add/post-add.component';
 import { PostListingComponent } from './features/post/post-listing/post-listing.component';
+import { UserSkillsComponent } from './features/profile/skills/user-skills/user-skills.component';
+import { UserAboutComponent } from './features/profile/about/user-about/user-about.component';
+import { UserEducationComponent } from './features/profile/Education/user-education/user-education.component';
+import { PersonalInfoComponent } from './features/profile/PersonalInfo/personal-info/personal-info.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { PostListingComponent } from './features/post/post-listing/post-listing.
     HomeComponent,
     ProfileComponent,
     PostAddComponent,
-    PostListingComponent
+    PostListingComponent,
+    UserSkillsComponent,
+    UserAboutComponent,
+    UserEducationComponent,
+    PersonalInfoComponent
   ],
   imports: [
     BrowserModule,
