@@ -8,6 +8,8 @@ import { ErrorPageComponent } from "./cores/error-page/error-page.component";
 import { FooterComponent } from "./cores/footer/footer.component";
 import { HomeComponent } from "./features/home/home.component";
 import { ProfileComponent } from "./features/profile/profile.component";
+import { PostAddComponent } from './features/post/post-add/post-add.component';
+import { PostListingComponent } from './features/post/post-listing/post-listing.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ProfileComponent } from "./features/profile/profile.component";
     ErrorPageComponent,
     FooterComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    PostAddComponent,
+    PostListingComponent
   ],
   imports: [
     BrowserModule,
