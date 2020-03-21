@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
-
+import {FormsModule}   from '@angular/forms';
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./cores/header/header.component";
 import { ErrorPageComponent } from "./cores/error-page/error-page.component";
@@ -31,7 +31,7 @@ import { PersonalInfoComponent } from './features/profile/PersonalInfo/personal-
     PersonalInfoComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,FormsModule,
     RouterModule.forRoot([
       { path: "", component: HomeComponent },
       { path: "home", component: HomeComponent },

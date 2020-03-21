@@ -67,7 +67,9 @@ export class UserService {
       connectionIds: [2, 3, 4, 5]
     }
   ];
-
+  GetAllUsers(): User[] {
+    return this.Users.slice();
+  }
   getById(id: number): User {
     return this.Users.find(user => user.id === id);
   }

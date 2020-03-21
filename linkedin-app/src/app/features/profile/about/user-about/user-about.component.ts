@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { User } from './../../../../_model/user';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-user-about',
@@ -6,10 +8,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-about.component.css']
 })
 export class UserAboutComponent implements OnInit {
-
-  constructor() { }
+  @ViewChild ('closebutton',{static:false}) closebutton;
+ @ViewChild('SpanAboutContent',{static:false}) SpanAboutContent;
+ user:User={
+  id: 5,
+  name: "hala nazmi",
+  profileImg: "",
+  coverImg: "",
+  jobTitle: "FrontEnd Developer",
+  jobAndEducation: "FrontEnd Developer",
+  address: "cairo",
+  about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
+  expriences: ["1 year exprience"],
+  skills: ["team lead", "active team member"],
+  connectionIds: [2, 3, 4, 5]
+ }
+ 
+  constructor() { 
+  
+  
+  }
 
   ngOnInit() {
   }
 
+
+  onSubmitAbout(textAreaAbout:HTMLTextAreaElement ){
+
+ this.user.about=textAreaAbout.value;
+
+ (this.SpanAboutContent.nativeElement as HTMLSpanElement).textContent=this.user.about;
+
+this.closebutton.nativeElement.click();
+ console.log(this.user)
+  }
 }
