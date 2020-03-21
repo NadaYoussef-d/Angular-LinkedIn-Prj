@@ -4,21 +4,21 @@ export class UserService {
     {
       id: 1,
       name: "eman el-sayed",
-      profileImg: "",
-      coverImg: "",
+      profileImg: "assets/images/emy.png",
+      coverImg: "assets/images/1.jpeg",
       jobTitle: "FrontEnd Developer",
       jobAndEducation: "FrontEnd Developer",
       address: "cairo",
       about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
       expriences: ["1 year exprience"],
       skills: ["team lead", "active team member"],
-      connectionIds: [2, 3, 4, 5]
+      connectionIds: [1, 8, 2, 3, 4, 5]
     },
     {
       id: 2,
       name: "farah mahmoud",
-      profileImg: "",
-      coverImg: "",
+      profileImg: "assets/images/img.jpg",
+      coverImg: "assets/images/1.jpeg",
       jobTitle: "FrontEnd Developer",
       jobAndEducation: "FrontEnd Developer",
       address: "cairo",
@@ -30,8 +30,8 @@ export class UserService {
     {
       id: 3,
       name: "mai eltayb",
-      profileImg: "",
-      coverImg: "",
+      profileImg: "assets/images/2.jpeg",
+      coverImg: "assets/images/1.jpeg",
       jobTitle: "FrontEnd Developer",
       jobAndEducation: "FrontEnd Developer",
       address: "cairo",
@@ -43,8 +43,8 @@ export class UserService {
     {
       id: 4,
       name: "nada ahmed",
-      profileImg: "",
-      coverImg: "",
+      profileImg: "assets/images/2.jpeg",
+      coverImg: "assets/images/1.jpeg",
       jobTitle: "FrontEnd Developer",
       jobAndEducation: "FrontEnd Developer",
       address: "cairo",
@@ -67,9 +67,7 @@ export class UserService {
       connectionIds: [2, 3, 4, 5]
     }
   ];
-  GetAllUsers(): User[] {
-    return this.Users.slice();
-  }
+
   getById(id: number): User {
     return this.Users.find(user => user.id === id);
   }
