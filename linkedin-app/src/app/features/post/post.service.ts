@@ -1,4 +1,5 @@
 import { Post } from "./../../_model/post";
+export class PostService {
   posts: Post[] = [
     {
       postId: 1,
@@ -44,4 +45,18 @@ import { Post } from "./../../_model/post";
       like: 4
     }
   ];
+  getPostById(postId: number): Post {
+    return this.posts.find(post => post.postId === postId);
+  }
+  createPost(post: Post) {
+    const newPost: Post = {
+      postId: this.posts.length,
+      userId: post.userId,
+      postText: post.postText,
+      postMedia: post.postMedia,
+      comment: post.comment,
+      like: post.like
+    };
+    return this.posts.push(newPost);
+  }
 }
