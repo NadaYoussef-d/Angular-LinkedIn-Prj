@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./cores/header/header.component";
 import { ErrorPageComponent } from "./cores/error-page/error-page.component";
@@ -34,6 +34,7 @@ import { UserService } from "./user.service";
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: "", component: HomeComponent },
       { path: "home", component: HomeComponent },

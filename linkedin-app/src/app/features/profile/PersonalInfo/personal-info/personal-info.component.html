@@ -32,7 +32,7 @@
         </div>
         <div class="personal-txt">
           <div class="text">
-            <h4 class="font-weight-normal">{{ user.name }}</h4>
+            <h4 class="font-weight-normal">{{ user.firstName +" "+ user.lastName}}</h4>
             <h5 class="font-weight-light">{{ user.jobTitle }}</h5>
             <h5 class="font-weight-light" style="display: inline;">
               {{ user.address }}
@@ -79,16 +79,16 @@
         <div class="form-row container">
           <div class="form-group col-md-6">
             <label for="inputFName">First Name</label>
-            <input required type="text" class="form-control" id="inputEmail4" />
+            <input required type="text" class="form-control" id="inputEmail4" value={{user.firstName}} />
           </div>
           <div class="form-group col-md-6">
             <label for="inputLName">Last Name</label>
-            <input required type="text" class="form-control" id="inputPassword4" />
+            <input required type="text" class="form-control" id="inputPassword4" value={{user.lastName}} />
           </div>
         </div>
         <div class="form-group container">
           <label for="inputAddress">Headline</label>
-          <input type="text" class="form-control" id="inputHeadline" />
+          <input type="text" class="form-control" id="inputHeadline" value={{user.jobTitle}} />
         </div>
         <br />
         <h6 class="font-weight-normal container" style="display: inline; color: rgb(19, 148, 247);">
@@ -107,17 +107,17 @@
         </div>
         <div class="form-group container">
           <label for="inputAddress2">Education</label>
-          <input type="text" class="form-control" id="inputEducation" />
+          <input type="text" class="form-control" id="inputEducation" value={{user.jobAndEducation}} />
         </div>
         <div class="form-row container">
           <div class="form-group col-md-6">
             <label for="inputCity">Country/Region</label>
-            <input type="text" class="form-control" id="inputCity" />
+            <input type="text" class="form-control" id="inputCity" value={{user.address}} />
           </div>
         </div>
       </form>
       <div class="modal-footer container">
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" onclick="edit()">Save changes</button>
       </div>
     </div>
   </div>
