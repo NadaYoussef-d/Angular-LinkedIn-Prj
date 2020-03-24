@@ -6,6 +6,38 @@ body {
     width: 80%;
     margin: auto;
   } */
+.coverImg {
+  width: 100%;
+  height: 250px;
+}
+
+.positing {
+  background-color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: absolute;
+  text-align: center;
+}
+
+.cover-pen {
+  left: 1100px;
+  top: 72px;
+}
+
+.profile-pen {
+  left: 150px;
+  top: 365px;
+}
+
+
+.profileImg {
+  display: inline-block;
+  width: 152px;
+  height: 152px;
+  border-radius: 50%;
+  margin: -70px 0 0 25px;
+}
 
 .profile-container {
   margin-top: 50px;
@@ -14,6 +46,7 @@ body {
   flex-direction: column;
   /* justify-content: center; */
 }
+
 .profile-block {
   background-color: white;
   height: auto;
@@ -21,6 +54,7 @@ body {
   border: 1px solid rgb(178, 180, 182);
   box-shadow: 1px rgb(208, 211, 214);
 }
+
 .pic {
   border: 3px solid rgb(241, 238, 238);
   position: absolute;
@@ -29,6 +63,7 @@ body {
   margin-top: 100px;
   height: 170px;
 }
+
 .personal-txt {
   display: flex;
   flex-direction: row;
@@ -42,29 +77,36 @@ body {
   align-self: flex-end;
   padding: 10px;
 }
+
 .add {
   align-self: flex-end;
   padding: 10px;
 }
+
 .experience {
   display: flex;
   justify-content: flex-end;
 
   flex-direction: column;
 }
+
 .btn-primary {
   background-color: rgb(3, 80, 121);
 }
+
 .button:hover {
   background-color: rgb(2, 51, 77);
 }
+
 .btn {
   margin-right: 5px;
 }
+
 .pen {
   color: rgb(3, 80, 121);
   align-self: center;
 }
+
 .edit {
   width: 40px;
   height: 40px;
@@ -74,14 +116,17 @@ body {
   border-radius: 50%;
   cursor: pointer;
 }
+
 .exp {
   color: black;
 }
+
 .logo {
   width: 30px;
   height: 30px;
   margin: 15px;
 }
+
 /*about*/
 
 .about-container {
@@ -111,12 +156,15 @@ body {
 .about-header-h2 {
   /* border:2px solid purple; */
 }
+
 .space {
   width: 87%;
 }
+
 .about-header-icon {
   /* border: 1px solid hotpink; */
 }
+
 .about-body-container {
   /* border:  .2px solid green ; */
   margin-top: 0.3rem;
@@ -124,6 +172,7 @@ body {
   width: 100%;
   height: auto;
 }
+
 .about-text {
   /* border: 1px solid hotpink; */
   overflow: hidden;
@@ -132,8 +181,8 @@ body {
   width: 70%;
   padding: 10px;
 }
-.about-text-span {
-}
+
+.about-text-span {}
 
 /*Skills*/
 
@@ -161,15 +210,19 @@ body {
   width: 100%;
   padding: 0.5rem;
 }
+
 .Skill-header-h2 {
   /* border:2px solid purple; */
 }
+
 .Skill-space {
   width: 65%;
 }
+
 .Skill-header-icon {
   /* border: 1px solid hotpink; */
 }
+
 .Skill-body-container {
   /* border:  .2px solid green ; */
   margin-top: 0.3rem;
@@ -177,15 +230,18 @@ body {
   width: 100%;
   height: auto;
 }
+
 .Skill-text-Icon-container {
   /* border:1px solid red ; */
   display: flex;
   border-bottom: 1px solid rgb(185, 184, 184);
   padding: 10px;
 }
+
 .no-border {
   border-bottom: 0px solid rgb(185, 184, 184);
 }
+
 .Skill-text {
   /* border: 1px solid hotpink; */
   /* overflow: hidden;
@@ -194,6 +250,7 @@ body {
   width: 30%;
   /* */
 }
-.Skill-edit {
-}
+
+.Skill-edit {}
+
 /*skills*/
