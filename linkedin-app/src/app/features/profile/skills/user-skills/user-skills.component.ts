@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { NgForm } from "@angular/forms";
+import { User } from "src/app/_model/user";
+import { UserService } from "src/app/user.service";
 
 @Component({
-  selector: 'app-user-skills',
-  templateUrl: './user-skills.component.html',
-  styleUrls: ['./user-skills.component.css']
+  selector: "app-user-skills",
+  templateUrl: "./user-skills.component.html",
+  styleUrls: ["./user-skills.component.css"]
 })
 export class UserSkillsComponent implements OnInit {
+  user: User = { skills: ["presentation!!"] };
 
-  constructor() { }
+  userService: UserService;
+  constructor(private userservice: UserService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+  // onSubmit(skillForm: NgForm) {
+  //   // this.userService.add(this.user);
+  //   console.log("skillForm");
+  // }
+  onSubmit(skillName) {
+    const user: User = { skills: skillName };
+    console.log(user);
+    this.userService.add(user);
   }
-
 }

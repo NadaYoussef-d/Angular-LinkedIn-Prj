@@ -3,24 +3,26 @@ export class UserService {
   private Users: User[] = [
     {
       id: 1,
-      name: "eman el-sayed",
-      profileImg: "",
-      coverImg: "",
+      firstName: "eman",
+      lastName: "el-sayed",
+      profileImg: "assets/images/emy.png",
+      coverImg: "assets/images/1.jpeg",
       jobTitle: "FrontEnd Developer",
       jobAndEducation: "FrontEnd Developer",
       address: "cairo",
       about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
       expriences: ["1 year exprience"],
       skills: ["team lead", "active team member"],
-      connectionIds: [2, 3, 4, 5]
+      connectionIds: [1, 8, 2, 3, 4, 5]
     },
     {
       id: 2,
-      name: "farah mahmoud",
-      profileImg: "",
-      coverImg: "",
+      firstName: "farah",
+      lastName: "mahmoud",
+      profileImg: "assets/images/img.jpg",
+      coverImg: "assets/images/1.jpeg",
       jobTitle: "FrontEnd Developer",
-      jobAndEducation: "FrontEnd Developer",
+      jobAndEducation: "iti",
       address: "cairo",
       about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
       expriences: ["1 year exprience"],
@@ -29,9 +31,10 @@ export class UserService {
     },
     {
       id: 3,
-      name: "mai eltayb",
-      profileImg: "",
-      coverImg: "",
+      firstName: "mai",
+      lastName: "eltayb",
+      profileImg: "assets/images/2.jpeg",
+      coverImg: "assets/images/1.jpeg",
       jobTitle: "FrontEnd Developer",
       jobAndEducation: "FrontEnd Developer",
       address: "cairo",
@@ -42,9 +45,10 @@ export class UserService {
     },
     {
       id: 4,
-      name: "nada ahmed",
-      profileImg: "",
-      coverImg: "",
+      firstName: "nada",
+      lastName: "ahmed",
+      profileImg: "assets/images/2.jpeg",
+      coverImg: "assets/images/1.jpeg",
       jobTitle: "FrontEnd Developer",
       jobAndEducation: "FrontEnd Developer",
       address: "cairo",
@@ -55,7 +59,8 @@ export class UserService {
     },
     {
       id: 5,
-      name: "hala nazmi",
+      firstName: "hala",
+      lastName: "nazmi",
       profileImg: "",
       coverImg: "",
       jobTitle: "FrontEnd Developer",
@@ -67,9 +72,7 @@ export class UserService {
       connectionIds: [2, 3, 4, 5]
     }
   ];
-  GetAllUsers(): User[] {
-    return this.Users.slice();
-  }
+
   getById(id: number): User {
     return this.Users.find(user => user.id === id);
   }
@@ -78,7 +81,8 @@ export class UserService {
     const index = this.Users.findIndex(a => a.id === user.id);
     this.Users[index] = {
       id: user.id,
-      name: user.name,
+      firstName: user.firstName,
+      lastName: user.lastName,
       profileImg: user.profileImg,
       coverImg: user.coverImg,
       jobTitle: user.jobTitle,
@@ -94,7 +98,8 @@ export class UserService {
   add(user: User) {
     const newUser: User = {
       id: this.Users.length,
-      name: user.name,
+      firstName: user.firstName,
+      lastName: user.lastName,
       profileImg: user.profileImg,
       coverImg: user.coverImg,
       jobTitle: user.jobTitle,

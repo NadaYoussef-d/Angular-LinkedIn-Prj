@@ -26,11 +26,12 @@
 
       <div class="Skill-body-container">
         <div class="Skill-text-Icon-container">
-          <div class="Skill-text">
+          <div class="Skill-text" #skill>
             CSS
           </div>
           <div class="Skill-space"></div>
           <div class="Skill-edit">
+            <i class="fas fa-pencil-alt pen"></i>
             <i class="fa fa-trash" aria-hidden="true"> </i>
           </div>
         </div>
@@ -40,6 +41,7 @@
           </div>
           <div class="Skill-space"></div>
           <div class="Skill-edit">
+            <i class="fas fa-pencil-alt pen"></i>
             <i class="fa fa-trash" aria-hidden="true"> </i>
           </div>
         </div>
@@ -49,6 +51,7 @@
           </div>
           <div class="Skill-space"></div>
           <div class="Skill-edit">
+            <i class="fas fa-pencil-alt pen"></i>
             <i class="fa fa-trash" aria-hidden="true"> </i>
           </div>
         </div>
@@ -87,15 +90,29 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form #skillsForm="ngForm">
           <div class="form-group">
             <label for="message-text" class="col-form-label">Skill</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <textarea
+              #skillName
+              ngModel
+              name="skillName"
+              class="form-control"
+              id="message-text"
+            >
+1</textarea
+            >
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Add</button>
+        <button
+          (click)="onSubmit(skillName.value)"
+          type="button"
+          class="btn btn-primary"
+        >
+          Add
+        </button>
       </div>
     </div>
   </div>
