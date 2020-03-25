@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { User } from './../../../../_model/user';
 import { UserService } from 'src/app/user.service';
 
@@ -10,6 +10,7 @@ import { UserService } from 'src/app/user.service';
 export class UserAboutComponent implements OnInit {
   @ViewChild ('closebutton',{static:false}) closebutton;
  @ViewChild('SpanAboutContent',{static:false}) SpanAboutContent;
+//  @Input()user:User;
  user:User={
   id: 5,
   name: "hala nazmi",
