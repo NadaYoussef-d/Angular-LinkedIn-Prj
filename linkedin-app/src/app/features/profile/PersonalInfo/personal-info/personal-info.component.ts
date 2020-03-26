@@ -1,6 +1,7 @@
+import { UserService } from "./../../../../user.service";
 import { Component, OnInit, Input } from "@angular/core";
 import { User } from "./../../../../_model/user";
-import { FormGroup, FormControl } from "@angular/forms";
+import { FormGroup, FormControl, FormControlName } from "@angular/forms";
 
 @Component({
   selector: "app-personal-info",
@@ -10,12 +11,13 @@ import { FormGroup, FormControl } from "@angular/forms";
 export class PersonalInfoComponent implements OnInit {
   @Input()
   user: User;
-  editProfileFrom: FormGroup;
-  constructor() {}
+  editClick = false;
+  editProfileForm: FormGroup;
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
     console.log(this.user);
-    this.editProfileFrom = new FormGroup({
+    this.editProfileForm = new FormGroup({
       firstName: new FormControl(this.user.firstName),
       lastName: new FormControl(this.user.lastName),
       jobTitle: new FormControl(this.user.jobTitle),
@@ -24,5 +26,36 @@ export class PersonalInfoComponent implements OnInit {
     });
   }
 
-  edit(text: InnerHTML) {}
+  openEditModal() {
+    this.editClick = !this.editClick;
+  }
+
+  edit() {
+    this.editClick = !this.editClick;
+    console.log(this.editClick);
+    console.log(this.editProfileForm);
+    this.user.firstName = (<FormControl>(
+      this.editProfileForm.get("firstName")
+    )).value;
+
+    this.user.lastName = (<FormControl>(
+      this.editProfileForm.get("lastName")
+    )).value;
+
+    this.user.jobTitle = (<FormControl>(
+      this.editProfileForm.get("jobTitle")
+    )).value;
+
+    this.user.jobAndEducation = (<FormControl>(
+      this.editProfileForm.get("jobAndEducation")
+    )).value;
+
+    this.user.address = (<FormControl>(
+      this.editProfileForm.get("address")
+    )).value;
+
+    console.log(this.user);
+    console.log(this.editProfileForm);
+    this.userService.update(this.user);
+  }
 }
