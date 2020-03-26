@@ -88,7 +88,7 @@ export class UserService {
       jobTitle: user.jobTitle,
       jobAndEducation: user.jobAndEducation,
       address: user.address,
-      about: user.address,
+      about: user.about,
       expriences: user.expriences,
       skills: user.skills,
       connectionIds: user.connectionIds
