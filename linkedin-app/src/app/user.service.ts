@@ -12,7 +12,7 @@ export class UserService {
       address: "cairo",
       about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
       expriences: ["1 year exprience"],
-      skills: ["team lead", "active team member"],
+      skills: ["team lead", "Presentation"],
       connectionIds: [1, 8, 2, 3, 4, 5]
     },
     {
@@ -26,7 +26,7 @@ export class UserService {
       address: "cairo",
       about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
       expriences: ["1 year exprience"],
-      skills: ["team lead", "active team member"],
+      skills: ["team lead", "JavaScript"],
       connectionIds: [2, 3, 4, 5]
     },
     {
@@ -40,7 +40,7 @@ export class UserService {
       address: "cairo",
       about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
       expriences: ["1 year exprience"],
-      skills: ["team lead", "active team member"],
+      skills: ["JavaScript", "active team member"],
       connectionIds: [2, 3, 4, 5]
     },
     {
@@ -54,7 +54,7 @@ export class UserService {
       address: "cairo",
       about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
       expriences: ["1 year exprience"],
-      skills: ["team lead", "active team member"],
+      skills: ["team lead", "active team member", "Presentation"],
       connectionIds: [2, 3, 4, 5]
     },
     {
@@ -73,6 +73,9 @@ export class UserService {
     }
   ];
 
+  getAllUsers(): User[] {
+    return this.Users.slice();
+  }
   getById(id: number): User {
     return this.Users.find(user => user.id === id);
   }
