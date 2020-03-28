@@ -36,7 +36,7 @@ import { UserService } from "./user.service";
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: "", component: HomeComponent },
+      // { path: "", component: HomeComponent },
       { path: "home/:id", component: HomeComponent },
       { path: "profile/:id", component: ProfileComponent }
     ])

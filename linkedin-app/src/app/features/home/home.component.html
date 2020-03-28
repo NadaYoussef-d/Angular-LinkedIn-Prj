@@ -14,13 +14,13 @@
           </div>
 
           <div class="card-profile-img">
-            <img src="assets/images/img.jpg" class="img-fluid img-thumbnail rounded-circle card-profile-img "
+            <img [src]="user.profileImg" class="img-fluid img-thumbnail rounded-circle card-profile-img "
               alt="card-profile-img">
           </div>
         </div>
         <div class=" pt-2 text-center">
-          <h6 class="card-title pointer">Welcome, Farah!</h6>
-          <a href="#" class=" pointer">Update your profile</a>
+          <h6 class="card-title pointer">Welcome, {{user.firstName}}!</h6>
+          <a [routerLink]="['/profile',user.id]" class=" pointer">Update your profile</a>
         </div>
 
 
@@ -31,7 +31,7 @@
           <a href="#">
             <div class="card-flex">
               <span class="font bold card-color ">Connection</span>
-              <span class="card-align font">1</span>
+              <span class="card-align font">{{user.connectionIds.length}}</span>
             </div>
             <span class="block font bold card-color-black card-decoration"> Grow your network</span>
           </a>
