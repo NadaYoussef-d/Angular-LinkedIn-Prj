@@ -7,18 +7,18 @@ body {
 
   /* I added this to see the modal, you don't need this */
 }
-
+.modal-close {
+  display: none;
+}
 /* Important part */
 .modal-dialog {
-  overflow-y: initial !important
+  overflow-y: initial !important;
 }
 
 .modal-body {
   height: 500px;
   overflow-y: auto;
-
 }
-
 
 .modal-backdrop {
   opacity: 0.5 !important;
@@ -64,7 +64,6 @@ body {
   left: 159px;
   top: 318px;
 }
-
 
 .profileImg {
   display: inline-block;
@@ -217,7 +216,8 @@ body {
   padding: 10px;
 }
 
-.about-text-span {}
+.about-text-span {
+}
 
 /*Skills*/
 
@@ -286,6 +286,7 @@ body {
   /* */
 }
 
-.Skill-edit {}
+.Skill-edit {
+}
 
 /*skills*/
