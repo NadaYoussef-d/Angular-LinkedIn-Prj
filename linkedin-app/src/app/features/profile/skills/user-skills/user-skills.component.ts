@@ -3,7 +3,6 @@ import { NgForm } from "@angular/forms";
 import { User } from "src/app/_model/user";
 import { UserService } from "src/app/user.service";
 import { ActivatedRouteSnapshot, ActivatedRoute } from "@angular/router";
-import { from } from "rxjs";
 
 @Component({
   selector: "app-user-skills",
@@ -13,7 +12,12 @@ import { from } from "rxjs";
 export class UserSkillsComponent implements OnInit {
   User: User;
   userId: number;
-  skills: String[];
+  skills: string[];
+  editData = {
+    name: "",
+    index: 0
+  };
+  EditSkillName: string;
   constructor(
     private route: ActivatedRoute,
     private userservice: UserService
@@ -22,14 +26,33 @@ export class UserSkillsComponent implements OnInit {
   ngOnInit() {
     this.userId = +this.route.snapshot.params["id"];
     this.User = this.userservice.getById(this.userId);
-    console.log(this.userId);
     this.skills = this.User.skills;
   }
-  // onSubmit(skillForm: NgForm) {
-  //   // this.userService.add(this.user);
-  //   console.log("skillForm");
-  // }
-  onSubmit(skillName) {
-    console.log(this.User);
+  onSubmit(skillForm: NgForm) {
+    const skill = skillForm.form.value.skillName;
+    if (skill !== "") {
+      this.skills.push(skill);
+    }
+  }
+
+  editSkill(skill: string, index: number) {
+    // console.log(skill);
+    // let skille = this.skills[index];
+
+    this.EditSkillName = this.skills[index];
+    this.editData["name"] = this.EditSkillName;
+    this.editData["index"] = index;
+    // this.skills.push(skille);
+  }
+
+  deleteSkill(index: number) {
+    this.skills.splice(index, 1);
+  }
+  onSubmitEdit(FormEdit: NgForm) {
+    let index;
+    let skill = FormEdit.form.value.skillName;
+    // if (skill === this.editData["name"])
+    index = this.editData["index"];
+    this.skills[index] = skill;
   }
 }
