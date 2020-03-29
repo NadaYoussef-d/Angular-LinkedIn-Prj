@@ -5,6 +5,6 @@ export class Experience{
     expTitle?:string;
     expEmploymentType?:string;
     expCompanyName?:string;
-    expStartDate?:Date; 
-    expEndDate?: Date;
+    expStartDate?:string; 
+    expEndDate?: string;
 }

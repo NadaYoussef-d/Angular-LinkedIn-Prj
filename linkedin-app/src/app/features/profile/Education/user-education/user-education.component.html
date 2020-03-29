@@ -176,30 +176,30 @@
         <div class="form-row container">
           <div class="form-group col-md-6">
             <label for="inputCity">EditTitle :</label>
-            <input   #texttitleEdit="ngModel" ngModel type="text" class="form-control" id="inputTitle" name="titleEdit" value={{ValuetitleEdit}}  />
+            <input   #texttitleEdit="ngModel" ngModel type="text" class="form-control" id="inputTitle" name="titleEdit" value={{ValuetitleEdit}} (change)="inputChange()" />
           </div>
         </div>
         <div class="form-row container">
           <div class="form-group col-md-6">
             <label for="inputCity">Employment Type :</label>
-            <input #textEmployment="ngModel"   ngModel type="text" class="form-control" id="inputEmploymentype"  name="EmploymentTypeEdit" value={{valueEmploymentTypeEdit}}  />
+            <input #textEmployment="ngModel"   ngModel type="text" class="form-control" id="inputEmploymentype"  name="EmploymentTypeEdit" value={{valueEmploymentTypeEdit}} (change)="inputChangeType()" /><!--(change)="inputChangeType()"-->
           </div>
         </div>
         <div class="form-row container">
           <div class="form-group col-md-6">
             <label for="inputCity">Company :</label>
-            <input  ngModel type="text" class="form-control" id="inputCompany" name="NameCompanyEdit" value={{valueNameCompanyEdit}}/>
+            <input #textcompanyEdit="ngModel" ngModel type="text" class="form-control" id="inputCompany" name="NameCompanyEdit" value={{valueNameCompanyEdit}} (change)="inputChangeCompanyName()"/>  <!--(change)="inputChangeCompanyName()"-->
           </div>
         </div>
        
         <div class="form-row container">
           <div class="form-group col-md-6">
             <label for="inputFName">Start Date :</label>
-            <input  ngModel required type="text" class="form-control" id="inputStartDate" name="StartDateEdit" value={{valueStartDateEdit}} />
+            <input #textStartDateEdit="ngModel" ngModel required type="text" class="form-control" id="inputStartDate" name="StartDateEdit" value={{valueStartDateEdit}} (change)="inputChangeStartDate()" /><!--(change)="inputChangeStartDate()""-->
           </div>
           <div class="form-group col-md-6">
             <label for="inputLName">End Date :</label>
-            <input  ngModel required type="text" class="form-control" id="inputEndDate"name="EndDateEdit" value={{valueEndDateEdit}}  />
+            <input #textEndDateEdit="ngModel" ngModel required type="text" class="form-control" id="inputEndDate"name="EndDateEdit" value={{valueEndDateEdit}}   /><!--(change)="inputChangeEndDate()"-->
           </div>
         </div>
 
