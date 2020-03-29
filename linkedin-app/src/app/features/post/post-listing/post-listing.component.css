@@ -1,6 +1,7 @@
 .comment-div {
   width: 555px;
-  height: 60px;
+  /* height: 60px; */
+  height: auto;
   background-color: white;
   margin-bottom: 5px;
   border: 1px solid #e4dcdc;
