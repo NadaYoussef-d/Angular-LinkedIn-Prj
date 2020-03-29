@@ -1,3 +1,5 @@
+import { Experience } from './experience';
+
 export interface User {
   id?: number;
   firstName?: string;
@@ -8,7 +10,7 @@ export interface User {
   jobAndEducation?: string;
   address?: string;
   about?: string;
-  expriences?: string[];
+  expriences?: Experience[];
   skills?: string[];
   connectionIds?: number[];
 }

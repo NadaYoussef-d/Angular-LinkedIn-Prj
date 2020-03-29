@@ -1,6 +1,6 @@
 <!-- Experience & Education block -->
 
-<div class="Skill-container shadow-sm p-3 mb-5 bg-white rounded">
+<div class="Skill-container shadow-sm p-3 mb-5 bg-white rounded" >
   <div class="row">
     <div class="col-9"></div>
   </div>
@@ -16,7 +16,7 @@
           <div class="about-edit">
             <a
               data-toggle="modal"
-              data-target="#exampleModalSkill"
+              data-target="#ExperienceAddModal"
               data-whatever="@getbootstrap"
             >
               <i class="fa fa-plus add"> </i
@@ -25,21 +25,37 @@
         </div>
       </div>
 
-      <div class="Skill-body-container">
-        <div class="Skill-text-Icon-container">
+      <div class="Skill-body-container" #SkillContainerparent  >
+        <div class="Skill-text-Icon-container" id="skill-conn" #SkillContainer *ngFor=" let exp of user.expriences;let i=index">
+          <div class="Expimg">
+           <img alt="my image"src=""width="20px" height="30px" style="margin-top: 40px;" />
+          </div>
           <div class="Skill-text">
-            <img src="assets/images/ITIlogo.png" class="logo" />
-
-            Information Technology Institute (ITI)
+           <span id="TitleExpSpan" #TitleExpSpan>{{user.expriences[i].expTitle}}</span>
+           <span id="EmploytypeExpSpan" #EmploytypeExpSpan>{{user.expriences[i].expEmploymentType}}</span> 
+           <span id="CompanyNameExpSpan" #CompanyNameExpSpan>{{user.expriences[i].expCompanyName}}</span>   
+           <span id="StartDateExpSpan" #StartDateExpSpan>{{user.expriences[i].expStartDate}}</span> 
+           <span id="EndDateExpSpan" #EndDateExpSpan>{{user.expriences[i].expEndDate}}</span> 
           </div>
           <div class="Skill-space"></div>
           <div class="Skill-edit">
-            <i class="fas fa-pencil-alt pen add"></i>
+          <!-- <button  >   (click)="OnClickEditIcon(user.expriences[i].experienceId)"-->
+            <a
+            data-toggle="modal"
+            data-target="#experienceEditModal"
+            data-whatever="@getbootstrap"
+            (click)="OnClickEditIcon(i,MyModalEditFormExp)"
+          >
+          <i class="fas fa-pencil-alt pen add"></i>
+          </a>
+          <!-- </button> -->
+           
+         
           </div>
         </div>
       </div>
 
-      <div class="Skill-body-container">
+      <!-- <div class="Skill-body-container">
         <div class="Skill-text-Icon-container">
           <div class="Skill-text">
             <img src="assets/images/0.png" class="logo" />
@@ -51,10 +67,10 @@
             <i class="fas fa-pencil-alt pen add"></i>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
-
+ <!-- </div> **********end of experience**************************************************************************-->
   <!-- </div> -->
   <div class="row">
     <div class="col-12">
@@ -92,3 +108,109 @@
     </div>
   </div>
 </div>
+<!--*******************************************************-->
+<!-- experience add modal -->
+<div class="modal fade bd-example-modal" id="ExperienceAddModal" tabindex="-1" role="dialog"
+  aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Experience</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" #closebutton>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form #MyModalAddFormExp="ngForm" id="ExpAddForm"> 
+        <div class="form-row container">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Title :</label>
+            <input   #texttitle="ngModel" ngModel type="text" class="form-control" id="inputTitle" name="title" value="" />
+          </div>
+        </div>
+        <div class="form-row container">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Employment Type :</label>
+            <input   ngModel type="text" class="form-control" id="inputEmploymentype"  name="EmploymentType"value="" />
+          </div>
+        </div>
+        <div class="form-row container">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Company :</label>
+            <input  ngModel type="text" class="form-control" id="inputCompany" name="NameCompany" value=""/>
+          </div>
+        </div>
+       
+        <div class="form-row container">
+          <div class="form-group col-md-6">
+            <label for="inputFName">Start Date :</label>
+            <input  ngModel required type="text" class="form-control" id="inputStartDate" name="StartDate" value="" />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputLName">End Date :</label>
+            <input  ngModel required type="text" class="form-control" id="inputEndDate"name="EndDate" value=""  />
+          </div>
+        </div>
+
+      </form>
+      <div class="modal-footer container">
+        <button type="button"  class="btn btn-primary" form="#ExpAddForm" (click)="onSubmitModalAddExp(MyModalAddFormExp)">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- experience edit modal -->
+<div class="modal fade bd-example-modal" id="experienceEditModal" tabindex="-1" role="dialog"
+  aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">edit Experience</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"  #closebuttonn>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form #MyModalEditFormExp="ngForm" id="ExpeditForm"> 
+        <div class="form-row container">
+          <div class="form-group col-md-6">
+            <label for="inputCity">EditTitle :</label>
+            <input   #texttitleEdit="ngModel" ngModel type="text" class="form-control" id="inputTitle" name="titleEdit" value={{ValuetitleEdit}}  />
+          </div>
+        </div>
+        <div class="form-row container">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Employment Type :</label>
+            <input #textEmployment="ngModel"   ngModel type="text" class="form-control" id="inputEmploymentype"  name="EmploymentTypeEdit" value={{valueEmploymentTypeEdit}}  />
+          </div>
+        </div>
+        <div class="form-row container">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Company :</label>
+            <input  ngModel type="text" class="form-control" id="inputCompany" name="NameCompanyEdit" value={{valueNameCompanyEdit}}/>
+          </div>
+        </div>
+       
+        <div class="form-row container">
+          <div class="form-group col-md-6">
+            <label for="inputFName">Start Date :</label>
+            <input  ngModel required type="text" class="form-control" id="inputStartDate" name="StartDateEdit" value={{valueStartDateEdit}} />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputLName">End Date :</label>
+            <input  ngModel required type="text" class="form-control" id="inputEndDate"name="EndDateEdit" value={{valueEndDateEdit}}  />
+          </div>
+        </div>
+
+      </form>
+      <div class="modal-footer container">
+        <button type="button"  class="btn btn-primary" form="#ExpeditForm" (click)=" onSubmitModalEditExp(MyModalEditFormExp)">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

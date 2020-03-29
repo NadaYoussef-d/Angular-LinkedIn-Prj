@@ -12,19 +12,7 @@ export class UserAboutComponent implements OnInit {
  @ViewChild('SpanAboutContent',{static:false}) SpanAboutContent;
  @Input()user:User;
  userService:UserService;
-//  user:User={
-//   id: 5,
-//   name: "hala nazmi",
-//   profileImg: "",
-//   coverImg: "",
-//   jobTitle: "FrontEnd Developer",
-//   jobAndEducation: "FrontEnd Developer",
-//   address: "cairo",
-//   about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
-//   expriences: ["1 year exprience"],
-//   skills: ["team lead", "active team member"],
-//   connectionIds: [2, 3, 4, 5]
-//  }
+
  
   constructor() { 
   

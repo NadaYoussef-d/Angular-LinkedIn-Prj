@@ -29,7 +29,8 @@ import { UserService } from "./user.service";
     UserSkillsComponent,
     UserAboutComponent,
     UserEducationComponent,
-    PersonalInfoComponent
+    PersonalInfoComponent,
+
   ],
   imports: [
     BrowserModule,
