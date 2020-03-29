@@ -45,12 +45,20 @@ export class PostService {
       like: 4
     }
   ];
+
+  getAllPost(): Post[] {
+    return this.posts;
+  }
   getPostById(postId: number): Post {
     return this.posts.find(post => post.postId === postId);
   }
+
+  getPostByUserId(userId: number): Post[] {
+    return this.posts.filter(post => post.userId === userId);
+  }
   createPost(post: Post) {
     const newPost: Post = {
-      postId: this.posts.length,
+      postId: this.posts.length + 1,
       userId: post.userId,
       postText: post.postText,
       postMedia: post.postMedia,

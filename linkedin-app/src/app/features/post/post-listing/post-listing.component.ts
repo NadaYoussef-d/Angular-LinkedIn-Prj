@@ -14,14 +14,14 @@ export class PostListingComponent implements OnInit {
   x: Comment[];
   // commentObj: { postId: number= 0, commentArr : Comment[]= [] };
   ngOnInit() {
-    for (let i = 0; i < this.postsId.length; i++) {
-      // this.commentObj.postId = this.postsId[i];
-      // this.commentObj.commentArr = this.commentService.getByPostId(
-      //   this.postsId[i]
-      // );
+    // for (let i = 0; i < this.postsId.length; i++) {
+    //   // this.commentObj.postId = this.postsId[i];
+    //   // this.commentObj.commentArr = this.commentService.getByPostId(
+    //   //   this.postsId[i]
+    //   // );
 
-      this.x = [...this.commentService.getByPostId(this.postsId[i])];
-    }
-    console.log(this.x);
+    //   this.x = [...this.commentService.getByPostId(this.postsId[i])];
+    // }
+    // console.log(this.x);
   }
 }

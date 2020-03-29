@@ -1,7 +1,7 @@
 import { User } from "./_model/user";
 //import{Experience} from ""
-import { from } from 'rxjs';
-import { Experience } from './_model/experience';
+import { from } from "rxjs";
+import { Experience } from "./_model/experience";
 export class UserService {
   private Users: User[] = [
     {
@@ -14,7 +14,16 @@ export class UserService {
       jobAndEducation: "FrontEnd Developer",
       address: "cairo",
       about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
-      expriences: [{experienceId:1,expTitle:'web-dev', expEmploymentType:'partTime',expCompanyName:'lin-dev',expStartDate:'2014- 1- 3',expEndDate:'2004-11-31'}],
+      expriences: [
+        {
+          experienceId: 1,
+          expTitle: "web-dev",
+          expEmploymentType: "partTime",
+          expCompanyName: "lin-dev",
+          expStartDate: "2014- 1- 3",
+          expEndDate: "2004-11-31"
+        }
+      ],
       skills: ["team lead", "active team member"],
       connectionIds: [1, 8, 2, 3, 4, 5]
     },
@@ -28,13 +37,27 @@ export class UserService {
       jobAndEducation: "iti",
       address: "cairo",
       about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
-      expriences: [{experienceId:1,expTitle:'web-dev', expEmploymentType:'partTime',expCompanyName:'lin-dev',expStartDate:'2019- 11- 3',expEndDate:'2020-11-3'},
-      {experienceId:2,expTitle:'mobile-dev', expEmploymentType:'partTime',expCompanyName:'lin-dev',expStartDate:'2019- 11- 3',expEndDate:'2020-11-3'}
-    
-    ],
-     
+      expriences: [
+        {
+          experienceId: 1,
+          expTitle: "web-dev",
+          expEmploymentType: "partTime",
+          expCompanyName: "lin-dev",
+          expStartDate: "2019- 11- 3",
+          expEndDate: "2020-11-3"
+        },
+        {
+          experienceId: 2,
+          expTitle: "mobile-dev",
+          expEmploymentType: "partTime",
+          expCompanyName: "lin-dev",
+          expStartDate: "2019- 11- 3",
+          expEndDate: "2020-11-3"
+        }
+      ],
+
       skills: ["team lead", "active team member"],
-      connectionIds: [2, 3, 4, 5]
+      connectionIds: [1, 4]
     },
     {
       id: 3,
@@ -46,8 +69,17 @@ export class UserService {
       jobAndEducation: "FrontEnd Developer",
       address: "cairo",
       about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
-      expriences: [{experienceId:1,expTitle:'web-dev', expEmploymentType:'partTime',expCompanyName:'lin-dev',expStartDate:'2015- 11- 3',expEndDate:'2015-11-3'}],
-   
+      expriences: [
+        {
+          experienceId: 1,
+          expTitle: "web-dev",
+          expEmploymentType: "partTime",
+          expCompanyName: "lin-dev",
+          expStartDate: "2015- 11- 3",
+          expEndDate: "2015-11-3"
+        }
+      ],
+
       skills: ["team lead", "active team member"],
       connectionIds: [2, 3, 4, 5]
     },
@@ -61,8 +93,17 @@ export class UserService {
       jobAndEducation: "FrontEnd Developer",
       address: "cairo",
       about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
-      expriences: [{experienceId:1,expTitle:'web-dev', expEmploymentType:'partTime',expCompanyName:'lin-dev',expStartDate:'2016- 11- 3',expEndDate:'2017-11-3'}],
-   
+      expriences: [
+        {
+          experienceId: 1,
+          expTitle: "web-dev",
+          expEmploymentType: "partTime",
+          expCompanyName: "lin-dev",
+          expStartDate: "2016- 11- 3",
+          expEndDate: "2017-11-3"
+        }
+      ],
+
       skills: ["team lead", "active team member"],
       connectionIds: [2, 3, 4, 5]
     },
@@ -76,8 +117,17 @@ export class UserService {
       jobAndEducation: "FrontEnd Developer",
       address: "cairo",
       about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
-      expriences: [{experienceId:1,expTitle:'web-dev', expEmploymentType:'partTime',expCompanyName:'lin-dev',expStartDate:'2013- 11 -3',expEndDate:'2012-11-3'}],
-   
+      expriences: [
+        {
+          experienceId: 1,
+          expTitle: "web-dev",
+          expEmploymentType: "partTime",
+          expCompanyName: "lin-dev",
+          expStartDate: "2013- 11 -3",
+          expEndDate: "2012-11-3"
+        }
+      ],
+
       skills: ["team lead", "active team member"],
       connectionIds: [2, 3, 4, 5]
     }
@@ -126,5 +176,4 @@ export class UserService {
 
     this.Users.push(newUser);
   }
- 
 }

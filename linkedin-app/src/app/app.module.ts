@@ -16,6 +16,7 @@ import { UserAboutComponent } from "./features/profile/about/user-about/user-abo
 import { UserEducationComponent } from "./features/profile/Education/user-education/user-education.component";
 import { PersonalInfoComponent } from "./features/profile/PersonalInfo/personal-info/personal-info.component";
 import { UserService } from "./user.service";
+import { PostService } from './features/post/post.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { UserService } from "./user.service";
       { path: "profile/:id", component: ProfileComponent }
     ])
   ],
-  providers: [UserService, CommentService],
+  providers: [UserService, CommentService,PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
