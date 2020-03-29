@@ -8,10 +8,28 @@ export class CommentService {
       commentContent: "hi erver one"
     },
     {
+      commentId: 4,
+      userId: 1,
+      postId: 12,
+      commentContent: "hi erver two"
+    },
+    {
+      commentId: 5,
+      userId: 1,
+      postId: 12,
+      commentContent: "hi erver tree"
+    },
+    {
       commentId: 2,
       userId: 2,
       postId: 13,
       commentContent: "good job"
+    },
+    {
+      commentId: 3,
+      userId: 3,
+      postId: 14,
+      commentContent: "bye"
     }
   ];
   ////////////// get all /////////////////////
@@ -22,6 +40,12 @@ export class CommentService {
   ///////// get by id//////////////////
   getById(commentId: number): Comment {
     return this.Comments.find(comment => comment.commentId === commentId);
+  }
+
+  getByPostId(postId: number): Comment[] {
+    let comments: Comment[] = [];
+    comments = this.Comments.filter(comment => comment.postId === postId);
+    return comments;
   }
   ////////// add new comment/////////////////////
   AddNewComment(UserId: number, PostId: number, CommentContent: string) {

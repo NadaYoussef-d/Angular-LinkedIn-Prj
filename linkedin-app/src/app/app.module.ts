@@ -1,3 +1,4 @@
+import { CommentService } from "./features/post/comment.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
@@ -38,11 +39,11 @@ import { UserService } from "./user.service";
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: "", component: HomeComponent },
-      { path: "home", component: HomeComponent },
+      { path: "home/:id", component: HomeComponent },
       { path: "profile/:id", component: ProfileComponent }
     ])
   ],
-  providers: [UserService],
+  providers: [UserService, CommentService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

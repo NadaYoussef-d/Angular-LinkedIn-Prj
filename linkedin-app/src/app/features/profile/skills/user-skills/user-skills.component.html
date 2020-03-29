@@ -25,9 +25,9 @@
       </div>
 
       <div class="Skill-body-container">
-        <div class="Skill-text-Icon-container">
-          <div class="Skill-text" #skill>
-            CSS
+        <div class="Skill-text-Icon-container" *ngFor="let skill of skills">
+          <div class="Skill-text">
+            {{ skill }}
           </div>
           <div class="Skill-space"></div>
           <div class="Skill-edit">
@@ -35,7 +35,7 @@
             <i class="fa fa-trash" aria-hidden="true"> </i>
           </div>
         </div>
-        <div class="Skill-text-Icon-container">
+        <!-- <div class="Skill-text-Icon-container">
           <div class="Skill-text">
             Javascript
           </div>
@@ -54,7 +54,7 @@
             <i class="fas fa-pencil-alt pen"></i>
             <i class="fa fa-trash" aria-hidden="true"> </i>
           </div>
-        </div>
+        </div> -->
         <!-- <div class="Skill-text">
                       HTML
                     </div>
@@ -94,7 +94,6 @@
           <div class="form-group">
             <label for="message-text" class="col-form-label">Skill</label>
             <textarea
-              #skillName
               ngModel
               name="skillName"
               class="form-control"
@@ -107,7 +106,7 @@
       </div>
       <div class="modal-footer">
         <button
-          (click)="onSubmit(skillName.value)"
+          (click)="onSubmit(skillsForm)"
           type="button"
           class="btn btn-primary"
         >
