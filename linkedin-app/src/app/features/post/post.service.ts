@@ -12,7 +12,7 @@ export class PostService {
         { postId: 1, commentId: 3, userId: 1, commentContent: "that's bad!" },
         { postId: 1, commentId: 2, userId: 3, commentContent: "that's new!" }
       ],
-      like: 3
+      like: 1
     },
     {
       postId: 2,

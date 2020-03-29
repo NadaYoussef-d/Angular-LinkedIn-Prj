@@ -16,7 +16,7 @@ import { UserAboutComponent } from "./features/profile/about/user-about/user-abo
 import { UserEducationComponent } from "./features/profile/Education/user-education/user-education.component";
 import { PersonalInfoComponent } from "./features/profile/PersonalInfo/personal-info/personal-info.component";
 import { UserService } from "./user.service";
-import { PostService } from './features/post/post.service';
+import { PostService } from "./features/post/post.service";
 
 @NgModule({
   declarations: [
@@ -31,8 +31,7 @@ import { PostService } from './features/post/post.service';
     UserSkillsComponent,
     UserAboutComponent,
     UserEducationComponent,
-    PersonalInfoComponent,
-
+    PersonalInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -40,11 +39,13 @@ import { PostService } from './features/post/post.service';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: "", component: HomeComponent },
+      // { path: "", redirectTo: "/home/:id=1", pathMatch: "full" },
       { path: "home/:id", component: HomeComponent },
-      { path: "profile/:id", component: ProfileComponent }
+      { path: "profile/:id", component: ProfileComponent },
+      { path: "**", component: ErrorPageComponent }
     ])
   ],
-  providers: [UserService, CommentService,PostService],
+  providers: [UserService, CommentService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

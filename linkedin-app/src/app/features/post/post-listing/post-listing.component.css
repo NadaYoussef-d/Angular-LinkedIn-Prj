@@ -1,11 +1,18 @@
 .comment-div {
   width: 555px;
-  height: 50px;
+  height: 60px;
   background-color: white;
   margin-bottom: 5px;
   border: 1px solid #e4dcdc;
   box-shadow: 0px 1px 2px #888585;
 }
+
+/* .textArea {
+  margin-left: 25px;
+  width: 550px;
+  height: 20px;
+  border: 1px solid #e4dcdc;
+} */
 
 .post-container {
   border: 1px solid #e4dcdc;
