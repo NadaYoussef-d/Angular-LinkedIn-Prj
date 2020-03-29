@@ -93,7 +93,7 @@
     <!-- post and comment -->
     <div class="col-6">
       <app-post-add [user]="user"></app-post-add>
-      <app-post-listing *ngFor="let post of posts"></app-post-listing>
+      <app-post-listing *ngFor="let post of posts" [post]="post"></app-post-listing>
     </div>
 
 

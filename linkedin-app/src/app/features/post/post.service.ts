@@ -1,4 +1,5 @@
 import { Post } from "./../../_model/post";
+import { EventEmitter } from "@angular/core";
 export class PostService {
   posts: Post[] = [
     {
@@ -65,6 +66,9 @@ export class PostService {
       comment: post.comment,
       like: post.like
     };
-    return this.posts.push(newPost);
+    // return
+    this.posts.push(newPost);
   }
+
+  newPostAdded = new EventEmitter<Post>();
 }

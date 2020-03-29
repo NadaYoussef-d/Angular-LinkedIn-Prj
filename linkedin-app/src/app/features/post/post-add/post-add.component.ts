@@ -30,6 +30,7 @@ export class PostAddComponent implements OnInit {
       like: 0
     };
     this.postService.createPost(this.newPost);
+    this.postService.newPostAdded.emit(this.newPost);
     this.openWritePost = !this.openWritePost;
 
     // let x = this.postService.getAllPost();
