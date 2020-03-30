@@ -22,6 +22,7 @@ export class PostListingComponent implements OnInit {
   x: Comment[];
   comment: {};
   liked = false;
+  addCommentClicked = false;
 
   ngOnInit() {
     this.user = this.userService.getById(this.post.userId);
@@ -47,5 +48,8 @@ export class PostListingComponent implements OnInit {
       this.post.comment.push(this.comment);
       newComment.value = "";
     }
+  }
+  addComment() {
+    this.addCommentClicked = true;
   }
 }
