@@ -2,6 +2,7 @@ import { CommentService } from "./features/post/comment.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
+import { ModalModule } from "ngx-bootstrap/modal";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./cores/header/header.component";
@@ -37,13 +38,15 @@ import { PostService } from "./features/post/post.service";
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+
     RouterModule.forRoot([
       { path: "", component: HomeComponent },
       // { path: "", redirectTo: "/home/:id=1", pathMatch: "full" },
       { path: "home/:id", component: HomeComponent },
       { path: "profile/:id", component: ProfileComponent },
       { path: "**", component: ErrorPageComponent }
-    ])
+    ]),
+    ModalModule.forRoot()
   ],
   providers: [UserService, CommentService, PostService],
   bootstrap: [AppComponent]

@@ -10,7 +10,11 @@ import { User } from "src/app/_model/user";
 import { FormsModule } from "@angular/forms";
 import { Experience } from "src/app/_model/experience";
 import { UserService } from "src/app/user.service";
-
+import { TemplateRef } from "@angular/core";
+import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { EducationService } from "../../../../services/education.service";
+import { Education } from "../../../../_model/education";
 @Component({
   selector: "app-user-education",
   templateUrl: "./user-education.component.html",
@@ -45,10 +49,68 @@ export class UserEducationComponent implements OnInit {
   ischangedType = false;
   isChangedStartDate = false;
   isChangedEndDate = false;
-  constructor() {}
 
-  ngOnInit() {}
+  eductionForm: FormGroup;
+  modalRef: BsModalRef;
+  educationData: Education[] = [];
+  editMode: boolean;
+  editedEducation: Education;
+  educationIndex: number;
+  constructor(
+    private modalService: BsModalService,
+    private fb: FormBuilder,
+    private educationService: EducationService
+  ) {}
 
+  ngOnInit() {
+    this.educationData = this.educationService.eductionArray;
+
+    this.eductionForm = this.fb.group({
+      school: [""],
+      degree: [""],
+      fieldOfStudy: [""],
+      startYear: [""],
+      endYear: [""],
+      grade: [""]
+    });
+  }
+
+  openModal(
+    template: TemplateRef<any>,
+    editMode?: boolean,
+    education?,
+    educationIndex?: number
+  ) {
+    this.modalRef = this.modalService.show(template);
+    if (editMode) {
+      this.editMode = true;
+      this.eductionForm.setValue(education);
+      education = this.eductionForm.value;
+      this.editedEducation = education;
+      this.educationIndex = educationIndex;
+    } else {
+      this.editMode = false;
+      this.eductionForm.reset();
+    }
+  }
+  onSubmit() {
+    // close model
+    this.modalRef.hide();
+    // push form object in array in service
+    if (this.editMode) {
+      this.educationService.editEducation(
+        this.eductionForm.value,
+        this.educationIndex
+      );
+    } else {
+      this.educationService.addEduction(this.eductionForm.value);
+    }
+    // reset form
+    this.eductionForm.reset();
+  }
+  cancel() {
+    this.modalRef.hide();
+  }
   inputChange() {
     this.isChangedtitle = true;
   }
