@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
     }
     //this.postsArr();
     this.postService.newPostAdded.subscribe(newPost => {
-      this.posts.push(newPost);
+      this.posts.unshift(newPost);
       console.log(newPost);
       console.log(this.posts);
     });
