@@ -8,10 +8,13 @@
           <i class="fa fa-search form-control-feedback  " aria-hidden="true"></i>
           <input class="form-control search " (keyup)="search($event)" type="search " placeholder="Search"
             aria-label="Search" #searching />
-          <div class="search-div" *ngFor="let s of num">
-            <!-- <img [src]="s.profileImg" /> -->
-            <a [routerLink]="['/profile',s.id]">{{s.firstName}}</a>
+          <div class="search-div">
+            <!-- {{this.value}} -->
+            <div class="searchRes" *ngFor="let s of num">
+              <!-- <img [src]="s.profileImg" /> -->
+              <a [routerLink]="['/profile',s.id]">{{s.firstName}}</a>
 
+            </div>
           </div>
         </form>
       </div>

@@ -26,13 +26,14 @@ export class HeaderComponent implements OnInit {
       this.num = res;
     });
   }
+  value: string;
   search(event) {
-    let value = event.target.value;
-    if (value === "") {
+    this.value = event.target.value;
+    if (this.value === "") {
       this.displaySearchResult = [];
     } else {
       for (let index = 0; index < this.allUsers.length; index++) {
-        if (this.allUsers[index].firstName.includes(event.target.value)) {
+        if (this.allUsers[index].firstName.includes(this.value)) {
           this.displaySearchResult.push(this.allUsers[index]);
         }
         console.log(this.displaySearchResult);

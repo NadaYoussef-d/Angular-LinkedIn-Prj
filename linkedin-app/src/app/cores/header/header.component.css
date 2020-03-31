@@ -44,13 +44,20 @@ nav {
   width: 90%;
 }
 .search-div {
-  height: 20px;
-  width: 300px;
-  background-color: grey;
-  /* position: absolute;
+  /* height: 200px; */
+  width: 280px;
+  background-color: rgb(238, 232, 232);
+  position: absolute;
   top: 42px;
-  left: 164px; */
+  left: 164px;
   z-index: 2;
+}
+.searchRes {
+  height: 30px;
+}
+.searchRes a {
+  text-decoration: none;
+  margin-left: 5px;
 }
 .form-control-feedback {
   position: absolute;
