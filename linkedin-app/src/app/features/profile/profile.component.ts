@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { User } from "./../../_model/user";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Params } from "@angular/router";
 import { UserService } from "src/app/user.service";
 
 @Component({
@@ -16,12 +16,14 @@ export class ProfileComponent implements OnInit {
   userid: number;
   user: User;
   ngOnInit() {
-    //console.log(this.route.snapshot.params["id"]);
-    this.userid = +this.route.snapshot.params["id"];
-    console.log(this.userid);
+    // this.userid = this.route.snapshot.params["id"];
+    this.route.params.subscribe((params: Params) => {
+      this.userid = +params["id"];
+      this.user = this.userService.getById(this.userid);
+    });
+    // console.log(this.userid);
+    // // console.log(this.user);
     // console.log(this.user);
-    this.user = this.userService.getById(this.userid);
-    console.log(this.user);
 
     // this.route.params.subscribe((params: Params) => {
     //   this.userid = this.route.snapshot.params["id"];

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { UserService } from "src/app/user.service";
 import { User } from "src/app/_model/user";
+import { ThrowStmt } from "@angular/compiler";
 
 @Component({
   selector: "app-header",
@@ -15,9 +16,29 @@ export class HeaderComponent implements OnInit {
   ) {}
   userid: number;
   user: User;
+  allUsers: User[];
+  displaySearchResult: User[] = [];
+  num: any[];
   ngOnInit() {
-    this.userid = +this.route.snapshot.params["id"];
-    this.user = this.userService.getById(this.userid);
-    console.log(this.user);
+    this.allUsers = this.userService.getAllUsers();
+    console.log(this.allUsers);
+    this.userService.searchResult.subscribe(res => {
+      this.num = res;
+    });
+  }
+  search(event) {
+    let value = event.target.value;
+    if (value === "") {
+      this.displaySearchResult = [];
+    } else {
+      for (let index = 0; index < this.allUsers.length; index++) {
+        if (this.allUsers[index].firstName.includes(event.target.value)) {
+          this.displaySearchResult.push(this.allUsers[index]);
+        }
+        console.log(this.displaySearchResult);
+      }
+    }
+    this.userService.searchResult.emit(this.displaySearchResult);
+    this.displaySearchResult = [];
   }
 }

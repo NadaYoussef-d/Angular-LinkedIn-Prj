@@ -1,7 +1,8 @@
-import { User } from "./_model/user";
 //import{Experience} from ""
 import { from } from "rxjs";
 import { Experience } from "./_model/experience";
+import { EventEmitter } from "@angular/core";
+import { User } from "./_model/user";
 export class UserService {
   private Users: User[] = [
     {
@@ -176,4 +177,5 @@ export class UserService {
 
     this.Users.push(newUser);
   }
+  searchResult = new EventEmitter<any>();
 }
