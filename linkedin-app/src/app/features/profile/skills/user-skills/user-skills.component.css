@@ -1,3 +1,18 @@
+.modal-open {
+  display: block;
+}
+
+.modal-backdrop {
+  opacity: 0.5 !important;
+}
+
+.styling {
+  width: 100%;
+  height: 900px;
+}
+
+
+
 .about-container {
   margin-top: 15px;
   padding: 1.2rem;
@@ -12,9 +27,11 @@
   margin-left: 6.5rem;
   margin-bottom: 10px;
 }
+
 .pen {
   margin-right: 5px;
 }
+
 .about-header-container {
   display: flex;
 
@@ -23,18 +40,23 @@
   width: 100%;
   padding: 0.5rem;
 }
+
 .block-header {
   display: flex;
 }
+
 .about-header-h2 {
   /* border:2px solid purple; */
 }
+
 .space {
   width: 87%;
 }
+
 .about-header-icon {
   /* border: 1px solid hotpink; */
 }
+
 .about-body-container {
   /* border:  .2px solid green ; */
   margin-top: 0.3rem;
@@ -42,6 +64,7 @@
   width: 100%;
   height: auto;
 }
+
 .about-text {
   /* border: 1px solid hotpink; */
   overflow: hidden;
@@ -50,8 +73,9 @@
   width: 70%;
   padding: 10px;
 }
-.about-text-span {
-}
+
+.about-text-span {}
+
 /*about*/
 /*Skills*/
 .Skill-container {
@@ -77,15 +101,19 @@
   width: 100%;
   padding: 0.5rem;
 }
+
 .Skill-header-h2 {
   /* border:2px solid purple; */
 }
+
 .Skill-space {
   width: 65%;
 }
+
 .Skill-header-icon {
   /* border: 1px solid hotpink; */
 }
+
 .Skill-body-container {
   /* border:  .2px solid green ; */
   margin-top: 0.3rem;
@@ -93,12 +121,14 @@
   width: 100%;
   height: auto;
 }
+
 .Skill-text-Icon-container {
   /* border:1px solid red ; */
   display: flex;
   border-bottom: 1px solid rgb(185, 184, 184);
   padding: 10px;
 }
+
 .Skill-text {
   /* border: 1px solid hotpink; */
   overflow: hidden;
@@ -107,6 +137,7 @@
   width: 30%;
   /* */
 }
+
 .Skill-edit {
   cursor: pointer;
 }

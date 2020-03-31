@@ -12,6 +12,8 @@ import { ActivatedRouteSnapshot, ActivatedRoute } from "@angular/router";
 export class UserSkillsComponent implements OnInit {
   User: User;
   userId: number;
+  isOpen = false;
+  isOpenEdit = false;
   skills: string[];
   editData = {
     name: "",
@@ -28,11 +30,20 @@ export class UserSkillsComponent implements OnInit {
     this.User = this.userservice.getById(this.userId);
     this.skills = this.User.skills;
   }
+
+  openModal() {
+    this.isOpen = !this.isOpen;
+  }
+
+  openEditModal() {
+    this.isOpenEdit = !this.isOpenEdit;
+  }
   onSubmit(skillForm: NgForm) {
     const skill = skillForm.form.value.skillName;
     if (skill !== "") {
       this.skills.push(skill);
     }
+    this.isOpen = !this.isOpen;
   }
 
   editSkill(skill: string, index: number) {
@@ -54,5 +65,6 @@ export class UserSkillsComponent implements OnInit {
     // if (skill === this.editData["name"])
     index = this.editData["index"];
     this.skills[index] = skill;
+    this.isOpenEdit = !this.isOpenEdit;
   }
 }
