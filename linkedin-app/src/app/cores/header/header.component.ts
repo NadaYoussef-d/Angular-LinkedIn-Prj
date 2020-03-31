@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Params } from "@angular/router";
 import { UserService } from "src/app/user.service";
 import { User } from "src/app/_model/user";
 import { ThrowStmt } from "@angular/compiler";
@@ -21,7 +21,15 @@ export class HeaderComponent implements OnInit {
   num: any[];
   ngOnInit() {
     this.allUsers = this.userService.getAllUsers();
-    console.log(this.allUsers);
+    // this.route.params.subscribe((params: Params) => {
+    //   this.userid = params["id"];
+    // });
+    this.route.params.subscribe((params: Params) => {
+      this.userid = +params["id"];
+      this.user = this.userService.getById(this.userid);
+    });
+    console.log(this.userid);
+    // console.log(this.allUsers);
     this.userService.searchResult.subscribe(res => {
       this.num = res;
     });
