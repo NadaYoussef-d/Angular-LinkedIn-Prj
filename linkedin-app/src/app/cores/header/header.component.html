@@ -10,9 +10,9 @@
             aria-label="Search" #searching />
           <div class="search-div">
             <!-- {{this.value}} -->
-            <div class="searchRes" *ngFor="let s of num">
-              <!-- <img [src]="s.profileImg" /> -->
-              <a [routerLink]="['/profile',s.id]">{{s.firstName}}</a>
+            <div class="searchRes" *ngFor="let s of num" [routerLink]="['/profile',s.id]">
+              <img [src]="s.profileImg" />
+              <a>{{s.firstName}}</a>
 
             </div>
           </div>
