@@ -50,6 +50,9 @@ export class UserEducationComponent implements OnInit {
   isChangedStartDate = false;
   isChangedEndDate = false;
 
+  isEditModalOpen = false;
+  isAddModalOpen = false;
+
   eductionForm: FormGroup;
   modalRef: BsModalRef;
   educationData: Education[] = [];
@@ -73,6 +76,13 @@ export class UserEducationComponent implements OnInit {
       endYear: [""],
       grade: [""]
     });
+  }
+
+  openEditModal() {
+    this.isEditModalOpen = !this.isEditModalOpen;
+  }
+  openAddModal() {
+    this.isAddModalOpen = !this.isAddModalOpen;
   }
 
   openModal(
@@ -151,7 +161,8 @@ export class UserEducationComponent implements OnInit {
     //  MyModalAddFormExp.value.StartDate="";
     //  MyModalAddFormExp.value.EndDate="";
     MyModalAddFormExp.reset();
-    this.closebutton.nativeElement.click();
+    //this.closebutton.nativeElement.click();
+    this.isAddModalOpen = !this.isAddModalOpen;
   }
   onSubmitModalEditExp(MyModalEditFormExp: HTMLFormElement) {
     if (this.isChangedtitle) {
@@ -219,11 +230,12 @@ export class UserEducationComponent implements OnInit {
     this.user.expriences[this.x].expStartDate = this.valueStartDateEdit;
     this.user.expriences[this.x].expEndDate = this.valueEndDateEdit;
 
-    this.closebuttonn.nativeElement.click();
+    // this.closebuttonn.nativeElement.click();
+    this.isEditModalOpen = !this.isEditModalOpen;
   }
 
   OnClickEditIcon(indexofExp: number, MyModalEditFormExp: HTMLFormElement) {
-    console.log("after save", MyModalEditFormExp.value.titleEdit);
+    // console.log("after save", MyModalEditFormExp.value.titleEdit);
     this.x = indexofExp;
 
     this.ValuetitleEdit = this.user.expriences[indexofExp].expTitle;

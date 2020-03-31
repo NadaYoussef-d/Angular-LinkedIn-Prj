@@ -14,32 +14,17 @@
         <div class="space"></div>
         <div class="about-header-icon">
           <div class="about-edit">
-            <a
-              data-toggle="modal"
-              data-target="#ExperienceAddModal"
-              data-whatever="@getbootstrap"
-            >
-              <i class="fa fa-plus add"> </i
-            ></a>
+            <a data-toggle="modal" data-target="#ExperienceAddModal" data-whatever="@getbootstrap">
+              <i class="fa fa-plus add" (click)="openAddModal()"> </i></a>
           </div>
         </div>
       </div>
 
-      <div class="Skill-body-container" #SkillContainerparent>
-        <div
-          class="Skill-text-Icon-container"
-          id="skill-conn"
-          #SkillContainer
-          *ngFor="let exp of user.expriences; let i = index"
-        >
+      <div class=" Skill-body-container" #SkillContainerparent>
+        <div class="Skill-text-Icon-container" id="skill-conn" #SkillContainer
+          *ngFor="let exp of user.expriences; let i = index">
           <div class="Expimg">
-            <img
-              alt="my image"
-              src=""
-              width="20px"
-              height="30px"
-              style="margin-top: 40px;"
-            />
+            <img alt="my image" src="" width="20px" height="30px" style="margin-top: 40px;" />
           </div>
           <div class="Skill-text">
             <span id="TitleExpSpan" #TitleExpSpan>{{
@@ -61,13 +46,9 @@
           <div class="Skill-space"></div>
           <div class="Skill-edit">
             <!-- <button  >   (click)="OnClickEditIcon(user.expriences[i].experienceId)"-->
-            <a
-              data-toggle="modal"
-              data-target="#experienceEditModal"
-              data-whatever="@getbootstrap"
-              (click)="OnClickEditIcon(i, MyModalEditFormExp)"
-            >
-              <i class="fas fa-pencil-alt pen add"></i>
+            <a data-toggle="modal" data-target="#experienceEditModal" data-whatever="@getbootstrap"
+              (click)="OnClickEditIcon(i, MyModalEditFormExp)">
+              <i class="fas fa-pencil-alt pen add" (click)="openEditModal()"></i>
             </a>
             <!-- </button> -->
           </div>
@@ -100,11 +81,7 @@
             <div class="space"></div>
             <div class="about-header-icon">
               <div class="about-edit">
-                <a
-                  data-toggle="modal"
-                  data-target="#exampleModalSkill"
-                  data-whatever="@getbootstrap"
-                >
+                <a data-toggle="modal" data-target="#exampleModalSkill" data-whatever="@getbootstrap">
                   <!-- <i class="fa fa-plus add"> </i> -->
                 </a>
               </div>
@@ -126,10 +103,7 @@
           </div>
           <!--  -->
           <div class="Skill-body-container">
-            <div
-              class="Skill-text-Icon-container no-border"
-              *ngFor="let education of educationData; let i = index"
-            >
+            <div class="Skill-text-Icon-container no-border" *ngFor="let education of educationData; let i = index">
               <div class="edu-info">
                 <div class="Skill-text">
                   <img src="assets/images/ITIlogo.png" class="logo" />
@@ -149,10 +123,7 @@
                 <div class="inputs">{{ education.grade }}</div>
               </div>
 
-              <div
-                class="Skill-edit editIcon"
-                (click)="openModal(template, true, education, i)"
-              >
+              <div class="Skill-edit editIcon" (click)="openModal(template, true, education, i)">
                 <i class="fas fa-pencil-alt pen edit editIcon"></i>
               </div>
             </div>
@@ -171,41 +142,22 @@
         <form [formGroup]="eductionForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="exampleFormControlInput1">School</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Ex:Boston Universty"
-              formControlName="school"
-            />
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ex:Boston Universty"
+              formControlName="school" />
           </div>
           <div class="form-group">
             <label for="exampleFormControlInput1">Degree</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Ex:Bachelors"
-              formControlName="degree"
-            />
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ex:Bachelors"
+              formControlName="degree" />
           </div>
           <div class="form-group">
             <label for="exampleFormControlInput1">Field Of Study</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Ex:Business"
-              formControlName="fieldOfStudy"
-            />
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ex:Business"
+              formControlName="fieldOfStudy" />
           </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Start Year</label>
-            <select
-              class="form-control"
-              id="exampleFormControlSelect1"
-              formControlName="startYear"
-            >
+            <select class="form-control" id="exampleFormControlSelect1" formControlName="startYear">
               <option></option>
               <option value="2020">2020</option>
               <option value="2019">2019</option>
@@ -231,11 +183,7 @@
           </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1">End Year</label>
-            <select
-              class="form-control"
-              id="exampleFormControlSelect1"
-              formControlName="endYear"
-            >
+            <select class="form-control" id="exampleFormControlSelect1" formControlName="endYear">
               <option></option>
               <option value="2020">2020</option>
               <option value="2019">2019</option>
@@ -261,13 +209,8 @@
           </div>
           <div class="form-group">
             <label for="exampleFormControlInput1">Grad</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder=""
-              formControlName="grade"
-            />
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=""
+              formControlName="grade" />
           </div>
           <div class="d-flex flex-end">
             <button type="submit" class="btn btn-primary">save</button>
@@ -278,221 +221,129 @@
 
     <!--*******************************************************-->
     <!-- experience add modal -->
-    <div
-      class="modal fade bd-example-modal"
-      id="ExperienceAddModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myExtraLargeModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog " role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Add Experience</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-              #closebutton
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form #MyModalAddFormExp="ngForm" id="ExpAddForm">
-            <div class="form-row container">
-              <div class="form-group col-md-6">
-                <label for="inputCity">Title :</label>
-                <input
-                  #texttitle="ngModel"
-                  ngModel
-                  type="text"
-                  class="form-control"
-                  id="inputTitle"
-                  name="title"
-                  value=""
-                />
-              </div>
+    <div [ngClass]="{'modal-opened' : isAddModalOpen}" *ngIf="isAddModalOpen">
+      <div class="modal-backdrop styling" [ngClass]="{'modal-opened' : isAddModalOpen}">
+      </div>
+      <div class="modal fade show bd-example-modal" id="ExperienceAddModal" tabindex="-1" role="dialog"
+        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true" style="display: block;">
+        <div class="modal-dialog " role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add Experience</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="openAddModal()"
+                #closebutton>
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            <div class="form-row container">
-              <div class="form-group col-md-6">
-                <label for="inputCity">Employment Type :</label>
-                <input
-                  ngModel
-                  type="text"
-                  class="form-control"
-                  id="inputEmploymentype"
-                  name="EmploymentType"
-                  value=""
-                />
+            <form #MyModalAddFormExp="ngForm" id="ExpAddForm">
+              <div class="form-row container">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">Title :</label>
+                  <input #texttitle="ngModel" ngModel type="text" class="form-control" id="inputTitle" name="title"
+                    value="" />
+                </div>
               </div>
-            </div>
-            <div class="form-row container">
-              <div class="form-group col-md-6">
-                <label for="inputCity">Company :</label>
-                <input
-                  ngModel
-                  type="text"
-                  class="form-control"
-                  id="inputCompany"
-                  name="NameCompany"
-                  value=""
-                />
+              <div class="form-row container">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">Employment Type :</label>
+                  <input ngModel type="text" class="form-control" id="inputEmploymentype" name="EmploymentType"
+                    value="" />
+                </div>
               </div>
-            </div>
+              <div class="form-row container">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">Company :</label>
+                  <input ngModel type="text" class="form-control" id="inputCompany" name="NameCompany" value="" />
+                </div>
+              </div>
 
-            <div class="form-row container">
-              <div class="form-group col-md-6">
-                <label for="inputFName">Start Date :</label>
-                <input
-                  ngModel
-                  required
-                  type="text"
-                  class="form-control"
-                  id="inputStartDate"
-                  name="StartDate"
-                  value=""
-                />
+              <div class="form-row container">
+                <div class="form-group col-md-6">
+                  <label for="inputFName">Start Date :</label>
+                  <input ngModel required type="text" class="form-control" id="inputStartDate" name="StartDate"
+                    value="" />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputLName">End Date :</label>
+                  <input ngModel required type="text" class="form-control" id="inputEndDate" name="EndDate" value="" />
+                </div>
               </div>
-              <div class="form-group col-md-6">
-                <label for="inputLName">End Date :</label>
-                <input
-                  ngModel
-                  required
-                  type="text"
-                  class="form-control"
-                  id="inputEndDate"
-                  name="EndDate"
-                  value=""
-                />
-              </div>
+            </form>
+            <div class="modal-footer container">
+              <button type="button" class="btn btn-primary" form="#ExpAddForm"
+                (click)="onSubmitModalAddExp(MyModalAddFormExp)">
+                Save changes
+              </button>
             </div>
-          </form>
-          <div class="modal-footer container">
-            <button
-              type="button"
-              class="btn btn-primary"
-              form="#ExpAddForm"
-              (click)="onSubmitModalAddExp(MyModalAddFormExp)"
-            >
-              Save changes
-            </button>
           </div>
         </div>
       </div>
+
     </div>
 
-    <!-- experience edit modal -->
-    <div
-      class="modal fade bd-example-modal"
-      id="experienceEditModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myExtraLargeModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog " role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">edit Experience</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-              #closebuttonn
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form #MyModalEditFormExp="ngForm" id="ExpeditForm">
-            <div class="form-row container">
-              <div class="form-group col-md-6">
-                <label for="inputCity">EditTitle :</label>
-                <input
-                  #texttitleEdit="ngModel"
-                  ngModel
-                  type="text"
-                  class="form-control"
-                  id="inputTitle"
-                  name="titleEdit"
-                  value="{{ ValuetitleEdit }}"
-                  (change)="inputChange()"
-                />
-              </div>
-            </div>
-            <div class="form-row container">
-              <div class="form-group col-md-6">
-                <label for="inputCity">Employment Type :</label>
-                <input
-                  #textEmployment="ngModel"
-                  ngModel
-                  type="text"
-                  class="form-control"
-                  id="inputEmploymentype"
-                  name="EmploymentTypeEdit"
-                  value="{{ valueEmploymentTypeEdit }}"
-                  (change)="inputChangeType()"
-                /><!--(change)="inputChangeType()"-->
-              </div>
-            </div>
-            <div class="form-row container">
-              <div class="form-group col-md-6">
-                <label for="inputCity">Company :</label>
-                <input
-                  #textcompanyEdit="ngModel"
-                  ngModel
-                  type="text"
-                  class="form-control"
-                  id="inputCompany"
-                  name="NameCompanyEdit"
-                  value="{{ valueNameCompanyEdit }}"
-                  (change)="inputChangeCompanyName()"
-                />
-                <!--(change)="inputChangeCompanyName()"-->
-              </div>
-            </div>
 
-            <div class="form-row container">
-              <div class="form-group col-md-6">
-                <label for="inputFName">Start Date :</label>
-                <input
-                  #textStartDateEdit="ngModel"
-                  ngModel
-                  required
-                  type="text"
-                  class="form-control"
-                  id="inputStartDate"
-                  name="StartDateEdit"
-                  value="{{ valueStartDateEdit }}"
-                  (change)="inputChangeStartDate()"
-                /><!--(change)="inputChangeStartDate()""-->
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputLName">End Date :</label>
-                <input
-                  #textEndDateEdit="ngModel"
-                  ngModel
-                  required
-                  type="text"
-                  class="form-control"
-                  id="inputEndDate"
-                  name="EndDateEdit"
-                  value="{{ valueEndDateEdit }}"
-                /><!--(change)="inputChangeEndDate()"-->
-              </div>
+    <!-- experience edit modal -->
+    <div [ngClass]="{'modal-opened' : openWritePost}" *ngIf="isEditModalOpen">
+      <div class="modal-backdrop styling" [ngClass]="{'modal-opened' : isEditModalOpen}">
+      </div>
+      <div class="modal show fade bd-example-modal" id="experienceEditModal" tabindex="-1" role="dialog"
+        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true" style="display: block;">
+        <div class="modal-dialog " role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">edit Experience</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="openEditModal()"
+                #closebuttonn>
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-          </form>
-          <div class="modal-footer container">
-            <button
-              type="button"
-              class="btn btn-primary"
-              form="#ExpeditForm"
-              (click)="onSubmitModalEditExp(MyModalEditFormExp)"
-            >
-              Save changes
-            </button>
+            <form #MyModalEditFormExp="ngForm" id="ExpeditForm">
+              <div class="form-row container">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">EditTitle :</label>
+                  <input #texttitleEdit="ngModel" ngModel type="text" class="form-control" id="inputTitle"
+                    name="titleEdit" value="{{ ValuetitleEdit }}" (change)="inputChange()" />
+                </div>
+              </div>
+              <div class="form-row container">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">Employment Type :</label>
+                  <input #textEmployment="ngModel" ngModel type="text" class="form-control" id="inputEmploymentype"
+                    name="EmploymentTypeEdit" value="{{ valueEmploymentTypeEdit }}" (change)="inputChangeType()" />
+                  <!--(change)="inputChangeType()"-->
+                </div>
+              </div>
+              <div class="form-row container">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">Company :</label>
+                  <input #textcompanyEdit="ngModel" ngModel type="text" class="form-control" id="inputCompany"
+                    name="NameCompanyEdit" value="{{ valueNameCompanyEdit }}" (change)="inputChangeCompanyName()" />
+                  <!--(change)="inputChangeCompanyName()"-->
+                </div>
+              </div>
+
+              <div class="form-row container">
+                <div class="form-group col-md-6">
+                  <label for="inputFName">Start Date :</label>
+                  <input #textStartDateEdit="ngModel" ngModel required type="text" class="form-control"
+                    id="inputStartDate" name="StartDateEdit" value="{{ valueStartDateEdit }}"
+                    (change)="inputChangeStartDate()" />
+                  <!--(change)="inputChangeStartDate()""-->
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputLName">End Date :</label>
+                  <input #textEndDateEdit="ngModel" ngModel required type="text" class="form-control" id="inputEndDate"
+                    name="EndDateEdit" value="{{ valueEndDateEdit }}" />
+                  <!--(change)="inputChangeEndDate()"-->
+                </div>
+              </div>
+            </form>
+            <div class="modal-footer container">
+              <button type="button" class="btn btn-primary" form="#ExpeditForm"
+                (click)="onSubmitModalEditExp(MyModalEditFormExp)">
+                Save changes
+              </button>
+            </div>
           </div>
         </div>
       </div>

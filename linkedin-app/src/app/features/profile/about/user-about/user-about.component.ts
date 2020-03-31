@@ -11,6 +11,7 @@ export class UserAboutComponent implements OnInit {
   @ViewChild("closebutton", { static: false }) closebutton;
   @ViewChild("SpanAboutContent", { static: false }) SpanAboutContent;
   @Input() user: User;
+  isEditOpen = false;
   userService: UserService;
   //  user:User={
   //   id: 5,
@@ -39,5 +40,10 @@ export class UserAboutComponent implements OnInit {
     this.closebutton.nativeElement.click();
     console.log(this.user);
     this.userService.update(this.user);
+    this.isEditOpen = !this.isEditOpen;
+  }
+
+  openEditModal() {
+    this.isEditOpen = !this.isEditOpen;
   }
 }
