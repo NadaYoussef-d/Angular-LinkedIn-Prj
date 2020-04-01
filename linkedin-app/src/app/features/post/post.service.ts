@@ -87,4 +87,5 @@ export class PostService {
   }
 
   newPostAdded = new EventEmitter<Post>();
+  newCommentAdded = new EventEmitter<any>();
 }

@@ -1,4 +1,4 @@
-import { User } from "src/app/_model/user";
+import { User } from "./../../../_model/user";
 import { Post } from "./../../../_model/post";
 import { Comment } from "./../../../_model/comment";
 import { CommentService } from "./../comment.service";
@@ -24,11 +24,22 @@ export class PostListingComponent implements OnInit {
   comment: {};
   liked = false;
   addCommentClicked = false;
+  commentedUsers: User[] = [];
 
   ngOnInit() {
     this.postUser = this.userService.getById(this.post.userId);
     this.x = this.post.comment;
-    console.log(this.x);
+    for (let index = 0; index < this.x.length; index++) {
+      this.commentedUsers.push(this.userService.getById(this.x[index].userId));
+    }
+
+    this.postService.newCommentAdded.subscribe(newComment => {
+      this.postUser = this.userService.getById(newComment.postId);
+
+      this.x = this.post.comment;
+      let newComm = newComment.comment.slice(-1)[0];
+      this.commentedUsers.push(this.userService.getById(newComm.userId));
+    });
   }
   newLike() {
     this.liked = !this.liked;
@@ -43,10 +54,11 @@ export class PostListingComponent implements OnInit {
       this.comment = {
         postId: this.post.postId,
         commentId: this.post.comment.length,
-        userId: this.postUser.id,
+        userId: this.user.id,
         commentContent: newComment.value
       };
       this.post.comment.push(this.comment);
+      this.postService.newCommentAdded.emit(this.post);
       newComment.value = "";
     }
   }
