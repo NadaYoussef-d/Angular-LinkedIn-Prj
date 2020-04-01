@@ -11,22 +11,22 @@ export class UserService {
       lastName: "el-sayed",
       profileImg: "assets/images/emy.png",
       coverImg: "assets/images/1.jpeg",
-      jobTitle: "FrontEnd Developer",
+      jobTitle: "Full stack Developer",
       jobAndEducation: "information technology institute",
-      address: "cairo",
-      about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
+      address: "Giza",
+      about: "hamadaaa1",
       expriences: [
         {
           experienceId: 1,
           expTitle: "web-dev",
-          expEmploymentType: "partTime",
+          expEmploymentType: "fullTime",
           expCompanyName: "lin-dev",
           expStartDate: "2014- 1- 3",
           expEndDate: "2004-11-31"
         }
       ],
       skills: ["team lead", "active team member"],
-      connectionIds: [8, 2, 3, 4, 5]
+      connectionIds: [2, 3, 4, 5]
     },
     {
       id: 2,
@@ -36,8 +36,8 @@ export class UserService {
       coverImg: "assets/images/1.jpeg",
       jobTitle: "FrontEnd Developer",
       jobAndEducation: "iti",
-      address: "cairo",
-      about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
+      address: "Ismailia",
+      about: "hamadaaaaaaaa2",
       expriences: [
         {
           experienceId: 1,
@@ -66,10 +66,10 @@ export class UserService {
       lastName: "eltayb",
       profileImg: "assets/images/2.jpeg",
       coverImg: "assets/images/1.jpeg",
-      jobTitle: "FrontEnd Developer",
-      jobAndEducation: "FrontEnd Developer",
-      address: "cairo",
-      about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
+      jobTitle: "web Developer",
+      jobAndEducation: "ITI",
+      address: "Cairo",
+      about: "hamadaaaaaa3",
       expriences: [
         {
           experienceId: 1,
@@ -90,10 +90,10 @@ export class UserService {
       lastName: "ahmed",
       profileImg: "assets/images/2.jpeg",
       coverImg: "assets/images/1.jpeg",
-      jobTitle: "FrontEnd Developer",
+      jobTitle: "Full stack Developer",
       jobAndEducation: "FrontEnd Developer",
-      address: "cairo",
-      about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
+      address: "Suez",
+      about: "hamada4",
       expriences: [
         {
           experienceId: 1,
@@ -114,9 +114,9 @@ export class UserService {
       lastName: "nazmi",
       profileImg: "assets/images/userimage.jpg",
       coverImg: "assets/images/1.jpeg",
-      jobTitle: "FrontEnd Developer",
-      jobAndEducation: "FrontEnd Developer",
-      address: "cairo",
+      jobTitle: "UI Designer ",
+      jobAndEducation: "information technology institute",
+      address: "North-Sinai",
       about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
       expriences: [
         {
@@ -124,13 +124,13 @@ export class UserService {
           expTitle: "web-dev",
           expEmploymentType: "partTime",
           expCompanyName: "lin-dev",
-          expStartDate: "2013- 11 -3",
-          expEndDate: "2012-11-3"
+          expStartDate: "2013- 12 -3",
+          expEndDate: "2018-11-3"
         }
       ],
 
       skills: ["team lead", "active team member"],
-      connectionIds: [2, 3, 1, 4]
+      connectionIds: [2, 1]
     }
   ];
 
