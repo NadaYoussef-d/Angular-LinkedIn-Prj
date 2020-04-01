@@ -39,7 +39,7 @@ export class UserAboutComponent implements OnInit {
     (this.SpanAboutContent
       .nativeElement as HTMLSpanElement).textContent = this.user.about;
 
-    this.closebutton.nativeElement.click();
+    // this.closebutton.nativeElement.click();
     console.log(this.user);
     this.userService.update(this.user);
     this.isEditOpen = !this.isEditOpen;
