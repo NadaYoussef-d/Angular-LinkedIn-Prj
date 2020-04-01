@@ -272,7 +272,7 @@
             <div class="modal-footer container">
               <button type="button" class="btn btn-primary" form="#ExpAddForm"
                 (click)="onSubmitModalAddExp(MyModalAddFormExp)">
-                Save changes
+                Add
               </button>
             </div>
           </div>
@@ -283,7 +283,7 @@
 
 
     <!-- experience edit modal -->
-    <div [ngClass]="{'modal-opened' : openWritePost}" *ngIf="isEditModalOpen">
+    <div [ngClass]="{'modal-opened' : isEditModalOpen}" *ngIf="isEditModalOpen">
       <div class="modal-backdrop styling" [ngClass]="{'modal-opened' : isEditModalOpen}">
       </div>
       <div class="modal show fade bd-example-modal" id="experienceEditModal" tabindex="-1" role="dialog"
@@ -302,14 +302,14 @@
                 <div class="form-group col-md-6">
                   <label for="inputCity">EditTitle :</label>
                   <input #texttitleEdit="ngModel" ngModel type="text" class="form-control" id="inputTitle"
-                    name="titleEdit" value="{{ ValuetitleEdit }}" (change)="inputChange()" />
+                    name="titleEdit" [value]="ValuetitleEdit" (change)="inputChange()" />
                 </div>
               </div>
               <div class="form-row container">
                 <div class="form-group col-md-6">
                   <label for="inputCity">Employment Type :</label>
                   <input #textEmployment="ngModel" ngModel type="text" class="form-control" id="inputEmploymentype"
-                    name="EmploymentTypeEdit" value="{{ valueEmploymentTypeEdit }}" (change)="inputChangeType()" />
+                    name="EmploymentTypeEdit" [value]="valueEmploymentTypeEdit" (change)="inputChangeType()" />
                   <!--(change)="inputChangeType()"-->
                 </div>
               </div>
@@ -317,7 +317,7 @@
                 <div class="form-group col-md-6">
                   <label for="inputCity">Company :</label>
                   <input #textcompanyEdit="ngModel" ngModel type="text" class="form-control" id="inputCompany"
-                    name="NameCompanyEdit" value="{{ valueNameCompanyEdit }}" (change)="inputChangeCompanyName()" />
+                    name="NameCompanyEdit" [value]=" valueNameCompanyEdit " (change)="inputChangeCompanyName()" />
                   <!--(change)="inputChangeCompanyName()"-->
                 </div>
               </div>
@@ -326,14 +326,14 @@
                 <div class="form-group col-md-6">
                   <label for="inputFName">Start Date :</label>
                   <input #textStartDateEdit="ngModel" ngModel required type="text" class="form-control"
-                    id="inputStartDate" name="StartDateEdit" value="{{ valueStartDateEdit }}"
+                    id="inputStartDate" name="StartDateEdit" [value]=" valueStartDateEdit "
                     (change)="inputChangeStartDate()" />
                   <!--(change)="inputChangeStartDate()""-->
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputLName">End Date :</label>
                   <input #textEndDateEdit="ngModel" ngModel required type="text" class="form-control" id="inputEndDate"
-                    name="EndDateEdit" value="{{ valueEndDateEdit }}" />
+                    name="EndDateEdit" [value]="valueEndDateEdit" />
                   <!--(change)="inputChangeEndDate()"-->
                 </div>
               </div>
