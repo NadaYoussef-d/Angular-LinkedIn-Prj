@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   x: Post[];
   ngOnInit() {
     this.userid = +this.route.snapshot.params["id"];
+    this.userService.userChanged.emit(this.userid);
     this.user = this.userService.getById(this.userid);
 
     this.user.connectionIds.push(this.user.id);

@@ -178,4 +178,5 @@ export class UserService {
     this.Users.push(newUser);
   }
   searchResult = new EventEmitter<any>();
+  userChanged = new EventEmitter<number>();
 }

@@ -14,14 +14,16 @@ export class HeaderComponent implements OnInit {
     private route: ActivatedRoute,
     private userService: UserService
   ) {}
-  userid: number;
+  userid: number = 1;
   user: User;
   allUsers: User[];
   displaySearchResult: User[] = [];
   num: any[];
   ngOnInit() {
     this.allUsers = this.userService.getAllUsers();
-
+    this.userService.userChanged.subscribe(id => {
+      this.userid = id;
+    });
     this.route.params.subscribe((params: Params) => {
       this.userid = +params["id"];
       this.user = this.userService.getById(this.userid);
