@@ -53,4 +53,5 @@ export class PostListingComponent implements OnInit {
   addComment() {
     this.addCommentClicked = true;
   }
+  myDate = Date.now();
 }
