@@ -40,7 +40,7 @@ import { PostService } from "./features/post/post.service";
     ReactiveFormsModule,
 
     RouterModule.forRoot([
-      { path: "", redirectTo: "/home/2", pathMatch: "full" },
+      { path: "", redirectTo: "/home/1", pathMatch: "full" },
       // { path: "", redirectTo: "/home/:id=1", pathMatch: "full" },
       { path: "home", component: HomeComponent },
       { path: "home/:id", component: HomeComponent },

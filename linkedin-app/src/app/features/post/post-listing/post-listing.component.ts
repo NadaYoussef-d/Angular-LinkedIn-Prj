@@ -17,7 +17,8 @@ export class PostListingComponent implements OnInit {
     private postService: PostService
   ) {}
   @Input() post: Post;
-  user: User;
+  @Input() user: User;
+  postUser: User;
   postsId: number[] = [12, 13];
   x: Comment[];
   comment: {};
@@ -25,7 +26,7 @@ export class PostListingComponent implements OnInit {
   addCommentClicked = false;
 
   ngOnInit() {
-    this.user = this.userService.getById(this.post.userId);
+    this.postUser = this.userService.getById(this.post.userId);
     this.x = this.post.comment;
     console.log(this.x);
   }
@@ -42,7 +43,7 @@ export class PostListingComponent implements OnInit {
       this.comment = {
         postId: this.post.postId,
         commentId: this.post.comment.length,
-        userId: this.user.id,
+        userId: this.postUser.id,
         commentContent: newComment.value
       };
       this.post.comment.push(this.comment);

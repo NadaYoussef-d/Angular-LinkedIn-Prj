@@ -4,7 +4,7 @@ export class PostService {
   posts: Post[] = [
     {
       postId: 1,
-      userId: 4,
+      userId: 3,
       postText: "welcome",
       postMedia: "123.mb4",
       comment: [
@@ -43,6 +43,22 @@ export class PostService {
         { postId: 4, commentId: 6, userId: 3, commentContent: "that's great!" },
         { postId: 4, commentId: 3, userId: 1, commentContent: "that's bad!" }
       ],
+      like: 4
+    },
+    {
+      postId: 4,
+      userId: 5,
+      postText: "new job",
+      postMedia: "123.png",
+      comment: [{ postId: 4, commentId: 6, userId: 3, commentContent: "wow" }],
+      like: 4
+    },
+    {
+      postId: 4,
+      userId: 4,
+      postText: "hey there",
+      postMedia: "123.png",
+      comment: [{ postId: 4, commentId: 6, userId: 3, commentContent: "wow" }],
       like: 4
     }
   ];

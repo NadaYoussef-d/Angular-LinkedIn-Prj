@@ -55,17 +55,17 @@
   <div class="post">
     <div class="upper-part-post">
       <div>
-        <a href="#"><img [src]="user.profileImg" class="img-post" /></a>
+        <a href="#"><img [src]="postUser.profileImg" class="img-post" /></a>
       </div>
 
       <div class="user-info">
         <div>
           <span class="user-name">{{
-          user.firstName + " " + user.lastName
+            postUser.firstName + " " + postUser.lastName
         }}</span>
         </div>
         <div>
-          <span class="user-job">{{ user.jobTitle }}</span>
+          <span class="user-job">{{ postUser.jobTitle }}</span>
         </div>
         <div>
           <span class="date">2W.</span>
@@ -157,11 +157,13 @@
   </div>
   <div *ngIf="addCommentClicked" class="comment-div">
     <div>
+      <!-- <img class="comment-img" [src]="user.profileImg" /> -->
       <input placeholder="Add a comment..." class="form-control rounded-pill" type="text" #newComment
         (keydown)="addNewComment($event, newComment)" />
     </div>
     <div *ngFor="let comments of x" class="border border-light rounded-lg">
       <div>
+        <img class="comment-img" [src]="user.profileImg" />
         {{ comments.commentContent }}
       </div>
     </div>

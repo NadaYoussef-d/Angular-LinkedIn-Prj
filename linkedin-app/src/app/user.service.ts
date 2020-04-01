@@ -12,7 +12,7 @@ export class UserService {
       profileImg: "assets/images/emy.png",
       coverImg: "assets/images/1.jpeg",
       jobTitle: "FrontEnd Developer",
-      jobAndEducation: "FrontEnd Developer",
+      jobAndEducation: "information technology institute",
       address: "cairo",
       about: "hamadaaaaaaaaaaaaaaaaaaaaaaaa",
       expriences: [
@@ -26,7 +26,7 @@ export class UserService {
         }
       ],
       skills: ["team lead", "active team member"],
-      connectionIds: [1, 8, 2, 3, 4, 5]
+      connectionIds: [8, 2, 3, 4, 5]
     },
     {
       id: 2,
@@ -82,7 +82,7 @@ export class UserService {
       ],
 
       skills: ["team lead", "active team member"],
-      connectionIds: [2, 3, 4, 5]
+      connectionIds: [2, 4, 5]
     },
     {
       id: 4,
@@ -106,14 +106,14 @@ export class UserService {
       ],
 
       skills: ["team lead", "active team member"],
-      connectionIds: [2, 3, 4, 5]
+      connectionIds: [2, 1, 5]
     },
     {
       id: 5,
       firstName: "hala",
       lastName: "nazmi",
-      profileImg: "",
-      coverImg: "",
+      profileImg: "assets/images/userimage.jpg",
+      coverImg: "assets/images/1.jpeg",
       jobTitle: "FrontEnd Developer",
       jobAndEducation: "FrontEnd Developer",
       address: "cairo",
@@ -130,7 +130,7 @@ export class UserService {
       ],
 
       skills: ["team lead", "active team member"],
-      connectionIds: [2, 3, 4, 5]
+      connectionIds: [2, 3, 1, 4]
     }
   ];
 
