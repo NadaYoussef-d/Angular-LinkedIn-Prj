@@ -12,7 +12,7 @@ export class UserAboutComponent implements OnInit {
   @ViewChild("SpanAboutContent", { static: false }) SpanAboutContent;
   @Input() user: User;
   isEditOpen = false;
-  userService: UserService;
+
   //  user:User={
   //   id: 5,
   //   name: "hala nazmi",
@@ -27,9 +27,11 @@ export class UserAboutComponent implements OnInit {
   //   connectionIds: [2, 3, 4, 5]
   //  }
 
-  constructor() {}
+  constructor(private userService: UserService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.user);
+  }
 
   onSubmitAbout(textAreaAbout: HTMLTextAreaElement) {
     this.user.about = textAreaAbout.value;
