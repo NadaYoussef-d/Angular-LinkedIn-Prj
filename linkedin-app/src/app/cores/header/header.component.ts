@@ -24,11 +24,11 @@ export class HeaderComponent implements OnInit {
     this.userService.userChanged.subscribe(id => {
       this.userid = id;
     });
-    this.route.params.subscribe((params: Params) => {
-      this.userid = +params["id"];
-      this.user = this.userService.getById(this.userid);
-      console.log(this.userid);
-    });
+    // this.route.params.subscribe((params: Params) => {
+    //   this.userid = +params["id"];
+    //   this.user = this.userService.getById(this.userid);
+    //   // console.log(this.userid);
+    // });
     // console.log(this.allUsers);
     this.userService.searchResult.subscribe(res => {
       this.num = res;

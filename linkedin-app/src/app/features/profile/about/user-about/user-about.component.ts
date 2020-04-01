@@ -30,7 +30,7 @@ export class UserAboutComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    console.log(this.user);
+    // console.log(this.user);
   }
 
   onSubmitAbout(textAreaAbout: HTMLTextAreaElement) {
@@ -40,7 +40,7 @@ export class UserAboutComponent implements OnInit {
       .nativeElement as HTMLSpanElement).textContent = this.user.about;
 
     // this.closebutton.nativeElement.click();
-    console.log(this.user);
+    // console.log(this.user);
     this.userService.update(this.user);
     this.isEditOpen = !this.isEditOpen;
   }

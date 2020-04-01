@@ -16,7 +16,7 @@ export class PersonalInfoComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    console.log(this.user);
+    // console.log(this.user);
     this.editProfileForm = new FormGroup({
       firstName: new FormControl(this.user.firstName),
       lastName: new FormControl(this.user.lastName),
@@ -32,8 +32,8 @@ export class PersonalInfoComponent implements OnInit {
 
   edit() {
     this.editClick = !this.editClick;
-    console.log(this.editClick);
-    console.log(this.editProfileForm);
+    // console.log(this.editClick);
+    // console.log(this.editProfileForm);
     this.user.firstName = (<FormControl>(
       this.editProfileForm.get("firstName")
     )).value;
@@ -54,8 +54,8 @@ export class PersonalInfoComponent implements OnInit {
       this.editProfileForm.get("address")
     )).value;
 
-    console.log(this.user);
-    console.log(this.editProfileForm);
+    // console.log(this.user);
+    // console.log(this.editProfileForm);
     this.userService.update(this.user);
   }
 }
